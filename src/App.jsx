@@ -2,9 +2,9 @@ import Hero from "./pages/Hero"
 
 const App = () => {
   return (
-    <div>
+    <main>
       <Hero />
-    </div>
+    </main>
   )
 }
 

@@ -25,7 +25,7 @@ export const heroImages = [
     {
         id: 4,
         heading: "People & Horses",
-        imgae: imgHorses,
+        image: imgHorses,
         link: "/horses"
     }
 ]

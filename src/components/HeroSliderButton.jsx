@@ -1,6 +1,6 @@
-const HeroSliderButton = ({icon}) => {
+const HeroSliderButton = ({icon, onClick}) => {
   return (
-    <button className="text-sm rounded-full p-4 hover:bg-neutral-500/33">{icon}</button>
+    <button onClick={onClick} className="text-sm rounded-full p-4 hover:bg-neutral-300/33">{icon}</button>
   )
 }
 
