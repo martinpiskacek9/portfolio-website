@@ -27,7 +27,7 @@ const Hero = () => {
       <section
       id="hero"
       key={heroImages[current].id}
-      className="flex justify-center items-end w-full h-screen py-12 px-18 bg-center bg-cover bg-no-repeat motion-preset-blur-right-sm motion-duration-3000"
+      className="flex justify-center items-end w-full h-screen bg-center bg-cover bg-no-repeat motion-preset-blur-right-sm motion-duration-3000"
       style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0), rgba(0,0,0,0.95)), url(${heroImages[current].image})` }}
       >
       </section>
