@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+body {
+    @apply bg-neutral-950;
+}
+
+* {
+    @apply text-neutral-50;
+}
+
+a, button {
+    @apply hover:text-neutral-300 duration-200 hover:duration-300 cursor-pointer;
+}
