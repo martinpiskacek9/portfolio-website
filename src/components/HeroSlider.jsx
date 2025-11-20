@@ -4,9 +4,9 @@ import HeroSliderButton from "./HeroSliderButton";
 
 const HeroSlider = ({ heading, link, onNext, onPrev }) => {
   return (
-    <div className="text-2xl flex items-center justify-between w-full">
+    <div className="w-full flex items-center justify-between absolute left-1/2 -translate-x-1/2 bottom-0 px-8 py-8">
       <HeroSliderButton onClick={onPrev} icon={<FontAwesomeIcon icon={faChevronLeft} />}></HeroSliderButton>
-      <a className="motion-preset-fade motion-delay-300 motion-duration-1500 motion-preset-slide-right" href={link}>{heading}</a>
+      <a className="font-raleway font-light uppercase motion-preset-fade motion-delay-300 motion-duration-1500 motion-preset-slide-right tracking-widest"href={link}>{heading}</a>
       <HeroSliderButton onClick={onNext} icon ={<FontAwesomeIcon icon={faChevronRight} />}></HeroSliderButton>
     </div>
   )

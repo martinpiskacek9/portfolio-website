@@ -5,6 +5,11 @@ body {
     @apply bg-neutral-950;
 }
 
+@theme {
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
+}
+
 * {
     @apply text-neutral-50;
 }
