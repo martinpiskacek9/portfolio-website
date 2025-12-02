@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="absolute z-50 font-bebas flex items-center justify-between w-full p-8 tracking-wide md:px-26 md:py-12 duration-300">
+      <nav className="absolute z-50 font-bebas flex items-center justify-between w-full p-8 tracking-wide md:px-12 md:py-12 lg:px-26 lg:py-12 duration-300">
 
         {/* LOGO */}
         <a className="text-2xl md:text-3xl" href="/">Martin Piskáček</a>
