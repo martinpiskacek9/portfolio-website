@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Galleries from "./pages/Galleries";
 import Hero from "./pages/Hero"
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
 
     <main>
       <Hero />
+      <Galleries />
     </main>
     </>
   )

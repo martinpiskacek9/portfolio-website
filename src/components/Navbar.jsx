@@ -1,4 +1,4 @@
-import { faBars, faX, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faX } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react';
 import MobileNavbar from "./MobileNavbar";

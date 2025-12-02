@@ -2,7 +2,7 @@
 @plugin "tailwindcss-motion";
 
 body {
-    @apply bg-neutral-950;
+    @apply bg-black;
 }
 
 @theme {
@@ -11,9 +11,13 @@ body {
 }
 
 * {
-    @apply text-neutral-50;
+    @apply text-neutral-50 scroll-smooth;
 }
 
 a, button {
     @apply hover:text-neutral-300 duration-200 hover:duration-300 cursor-pointer;
+}
+
+h2 {
+    @apply font-raleway uppercase text-2xl font-extrabold tracking-widest mt-6 mb-12;
 }
