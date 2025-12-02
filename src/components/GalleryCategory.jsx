@@ -1,7 +1,7 @@
 
 const GalleryCategory = ({ heading, img }) => {
   return (
-    <div className="w-full md:w-80 xl:w-70 h-90 overflow-hidden hover:outline outline-neutral-300">
+    <div className="w-full md:w-80 xl:w-70 h-90 overflow-hidden hover:outline outline-neutral-400">
       <div
       className="w-full h-full flex bg-center bg-no-repeat bg-cover hover:scale-105 duration-300 hover:duration-300 outline-neutral-300 hover:outline"
       style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${img})` }}
