@@ -1,7 +1,7 @@
 import imgAutomotive from "./src/imgs/automotive.webp";
 import imgHorses from "./src/imgs/horses.webp";
 import imgLandscapes from "./src/imgs/landscapes.webp";
-import imgTravel from "./src/imgs/travel-2.webp";
+import imgTravel from "./src/imgs/travel.webp";
 
 export const heroImages = [
     {
