@@ -1,3 +1,4 @@
+import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import PageDivider from "./components/PageDivider";
 import Galleries from "./pages/Galleries";
@@ -13,7 +14,7 @@ const App = () => {
     <main>
       <Hero />
       <Galleries />
-      <PageDivider />
+      <About />
     </main>
     </>
   )
