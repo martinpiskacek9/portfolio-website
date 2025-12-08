@@ -2,6 +2,7 @@ import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import Galleries from "./pages/Galleries";
 import Hero from "./pages/Hero"
+import ImageSlider from "./components/ImageSlider";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
     <main>
       <Hero />
       <Galleries />
+      <ImageSlider />
       <About />
     </main>
     </>
