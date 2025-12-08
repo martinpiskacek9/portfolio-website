@@ -2,6 +2,7 @@ import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import Galleries from "./pages/Galleries";
 import Hero from "./pages/Hero"
+import PageDivider from "./components/PageDivider";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
     <main>
       <Hero />
       <Galleries />
+      <PageDivider />
       <About />
     </main>
     </>
