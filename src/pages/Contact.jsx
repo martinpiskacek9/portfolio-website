@@ -1,8 +1,10 @@
+import FormButton from "../components/FormButton"
+
 const Contact = () => {
   return (
     <section
     id="contact"
-    className="w-full h-full flex flex-col items-center justify-start py-26 bg-neutral-500"
+    className="w-full h-full flex flex-col items-center justify-start py-26"
     >
         <h2>Get in touch</h2>
         <form className="flex flex-col items-center justify-center gap-8 w-[60vw] h-full">
@@ -21,7 +23,7 @@ const Contact = () => {
                 <label htmlFor="form_message">Message</label>
                 <textarea id="form_message" className="min-h-40" />
             </div>
-            <input type="submit" value="Send" />
+            <FormButton />
         </form>
     </section>
   )

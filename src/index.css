@@ -28,5 +28,5 @@ label {
 }
 
 input, textarea {
-    @apply font-raleway tracking-wide border border-neutral-50 px-3 py-2;
+    @apply font-raleway tracking-wide border-neutral-50;
 }
