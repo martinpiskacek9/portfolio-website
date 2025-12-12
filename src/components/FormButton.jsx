@@ -1,6 +1,6 @@
 const FormButton = () => {
   return (
-    <input className="cursor-pointer px-8 py-4 uppercase font-semibold bg-neutral-800 border-0 hover:bg-neutral-600 duration-300" type="submit" value="Send" />
+    <button type="submit" className="btn cursor-pointer appearance-none px-8 py-3 uppercase font-semibold bg-neutral-400 border-0 hover:bg-neutral-300 duration-300">Send</button>
   )
 }
 

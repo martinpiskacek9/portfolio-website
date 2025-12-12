@@ -28,5 +28,9 @@ label {
 }
 
 input, textarea {
-    @apply font-raleway tracking-wide border-neutral-50;
+    @apply font-raleway tracking-wide border-neutral-400 focus:outline-1 focus:outline-neutral-300;
+}
+
+.btn {
+    @apply text-neutral-950 hover:text-neutral-950;
 }
