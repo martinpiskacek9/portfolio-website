@@ -22,3 +22,11 @@ a, button {
 h2 {
     @apply font-bebas uppercase text-4xl font-extrabold tracking-widest mb-26;
 }
+
+label {
+    @apply font-montserrat tracking-widest cursor-pointer uppercase text-sm;
+}
+
+input, textarea {
+    @apply font-raleway tracking-wide border border-neutral-50 px-3 py-2;
+}
