@@ -8,7 +8,7 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setStatus("Odesílám...");
+    setStatus("Sending...");
 
     emailjs
       .sendForm(
@@ -21,12 +21,12 @@ const Contact = () => {
       )
       .then(
         () => {
-          setStatus("Zpráva byla odeslána.");
+          setStatus("Message sent successfully.");
           e.target.reset();
         },
         (error) => {
           console.error("EmailJS error:", error);
-          setStatus("Odeslání se nezdařilo.");
+          setStatus("Failed to send the messasge.");
         }
       );
   };
@@ -82,7 +82,7 @@ const Contact = () => {
 
         <FormButton />
 
-        {status && <p className="text-sm opacity-80">{status}</p>}
+        {status && <p className="text-sm tracking-wide font-montserrat">{status}</p>}
       </form>
     </section>
   );
