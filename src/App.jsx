@@ -3,6 +3,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Gear from "./pages/Gear";
 
+import { Routes, Route } from "react-router-dom";
+
 const App = () => {
   return (
     <>
@@ -12,9 +14,9 @@ const App = () => {
 
     <main>
       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/gear" element={<Gear />} />
-        </Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/gear" element={<Gear />} />
+      </Routes>
     </main>
 
     <Footer />
