@@ -11,7 +11,7 @@ const ScrollToTop = () => {
     };
 
   return (
-    <button className="text-sm rounded-full p-4 hover:bg-neutral-500/30">
+    <button onClick={toTop} className="text-sm rounded-full p-4 hover:bg-neutral-500/30">
         <FontAwesomeIcon className="text-xl" icon={faArrowUpLong} />
     </button>
   )
