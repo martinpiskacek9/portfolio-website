@@ -1,4 +1,5 @@
 import GearHeading from "../components/GearHeading";
+import GearCard from "../components/GearCard";
 
 const Gear = () => {
   return (
@@ -13,7 +14,7 @@ const Gear = () => {
         <div className="w-full h-full py-26 px-52 flex flex-col gap-12">
           <GearHeading heading="camera bodies" />
           <div className="w-full flex items-center justify-center gap-8">
-            
+            <GearCard />
           </div>
         </div>
     </section>
