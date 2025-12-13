@@ -4,6 +4,7 @@ import Galleries from "./pages/Galleries";
 import Hero from "./pages/Hero"
 import Contact from "./pages/Contact";
 import PageDivider from "./components/PageDivider";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
       <About />
       <Contact />
     </main>
+
+    <Footer />
     </>
   )
 }
