@@ -1,6 +1,6 @@
 const Gear = () => {
   return (
-    <section>
+    <section className="w-full h-screen flex items-center justify-center">
         <h2>MY GEAR</h2>
     </section>
   )
