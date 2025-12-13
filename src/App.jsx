@@ -1,10 +1,7 @@
-import About from "./pages/About";
 import Navbar from "./components/Navbar";
-import Galleries from "./pages/Galleries";
-import Hero from "./pages/Hero"
-import Contact from "./pages/Contact";
-import PageDivider from "./components/PageDivider";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Gear from "./pages/Gear";
 
 const App = () => {
   return (
@@ -14,11 +11,10 @@ const App = () => {
     </header>
 
     <main>
-      <Hero />
-      <Galleries />
-      <PageDivider />
-      <About />
-      <Contact />
+      <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/gear" element={<Gear />} />
+        </Routes>
     </main>
 
     <Footer />
