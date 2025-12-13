@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUpLong } from '@fortawesome/free-solid-svg-icons'
+import ScrollToTop from './ScrollToTop'
 
 const Footer = () => {
   return (
@@ -7,7 +6,7 @@ const Footer = () => {
       <div className="border-t border-neutral-500/50 w-full h-full flex items-center justify-between pt-12 font-montserrat text-sm">
         <p>&copy; Martin Piskáček 2025</p>
         <button className="text-sm rounded-full p-4 hover:bg-neutral-500/30">
-            <FontAwesomeIcon className="text-xl" icon={faArrowUpLong} />
+            <ScrollToTop />
         </button>
       </div>
     </footer>
