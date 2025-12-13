@@ -11,7 +11,7 @@ const Gear = () => {
         </div>
 
         <div className="w-full h-full py-26 px-52">
-          <GearHeading />
+          <GearHeading heading="camera bodies" />
         </div>
     </section>
   )
