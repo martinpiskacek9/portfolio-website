@@ -25,7 +25,7 @@ a, button {
 }
 
 h2 {
-  @apply font-bebas uppercase text-4xl font-extrabold tracking-widest mb-26;
+  @apply font-bebas uppercase text-3xl md:text-4xl font-extrabold tracking-widest mb-26;
 }
 
 label {
