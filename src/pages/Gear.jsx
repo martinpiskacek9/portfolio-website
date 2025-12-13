@@ -10,8 +10,11 @@ const Gear = () => {
           <h1 className="text-5xl font-montserrat font-black tracking-wide italic">MY GEAR</h1>
         </div>
 
-        <div className="w-full h-full py-26 px-52">
+        <div className="w-full h-full py-26 px-52 flex flex-col gap-12">
           <GearHeading heading="camera bodies" />
+          <div className="w-full flex items-center justify-center gap-8">
+            
+          </div>
         </div>
     </section>
   )
