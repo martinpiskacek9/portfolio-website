@@ -21,7 +21,7 @@ const Gear = () => {
           <GearHeading heading="camera body" />
 
           {/* CONTAINER S GEAR CARDS */}
-          <div className="w-full flex items-center mt-16 mb-24">
+          <div className="w-full flex items-center mt-16 mb-52">
             <GearCard heading={gear[0].heading} image={gear[0].image}  />
           </div>
 
@@ -29,7 +29,7 @@ const Gear = () => {
           <GearHeading heading="lenses" />
 
           {/* CONTAINER S GEAR CARDS */}
-          <div className="w-full flex gap-4 flex-wrap mt-16 mb-24">
+          <div className="w-full flex gap-4 flex-wrap mt-16 mb-52">
               <GearCard heading={gear[1].heading} image={gear[1].image} />
               <GearCard heading={gear[2].heading} image={gear[2].image} />
               <GearCard heading={gear[3].heading} image={gear[3].image} />
@@ -38,14 +38,14 @@ const Gear = () => {
 
           <GearHeading heading="tripods" />
 
-          <div className="w-full flex items-center gap-4 mt-16 mb-24 flex-wrap">
+          <div className="w-full flex items-center gap-4 mt-16 mb-52 flex-wrap">
             <GearCard heading={gear[5].heading} image={gear[5].image} />
             <GearCard heading={gear[6].heading} image={gear[6].image} />
           </div>
 
           <GearHeading heading="camera bag" />
 
-          <div className="w-full flex items-center mt-8 mb-24">
+          <div className="w-full flex items-center mt-8 mb-52">
             <GearCard heading={gear[7].heading} image={gear[7].image} />
           </div>
           
