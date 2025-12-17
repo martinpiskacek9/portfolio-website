@@ -4,6 +4,7 @@ import imgLens14 from "./src/imgs/gear/sony_14mm.webp";
 import imgLens80 from "./src/imgs/gear/sony_85mm.webp";
 import imgLens70200 from "./src/imgs/gear/sony_70-200mm.webp";
 import imgTripod from "./src/imgs/gear/benro_tripod.webp";
+import imgTripod2 from "./src/imgs/gear/rollei.webp";
 import imgBag from "./src/imgs/gear/shimoda.webp";
 
 export const gear = [
@@ -38,8 +39,13 @@ export const gear = [
         image: imgTripod
     },
     {
-        id: 7,
+        i: 7,
+        heading: "Rollei C5i",
+        image: imgTripod2
+    },
+    {
+        id: 8,
         heading: "Shimoda Explore V2 35",
-        img: imgBag
+        image: imgBag
     }
 ]
