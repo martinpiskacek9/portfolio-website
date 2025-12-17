@@ -1,6 +1,6 @@
 const GearCard = ({ heading, image, rotate }) => {
   return (
-    <div className="w-100 h-115 flex flex-col items-center gap-8 justify-end p-6">
+    <div className="border w-100 h-115 flex flex-col items-center gap-8 justify-end p-6">
       
         <div className="w-full flex-1 flex items-center justify-center">
           <img

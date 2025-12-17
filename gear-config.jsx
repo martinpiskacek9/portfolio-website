@@ -14,22 +14,22 @@ export const gear = [
     },
     {
         id: 2,
-        heading: "Samyang 24-70 mm f/2,8 FE",
+        heading: "Samyang 24-70 mm f/2,8",
         image: imgLens2470
     },
     {
         id: 3,
-        heading: "Sony FE 14 mm f/1,8 GM",
+        heading: "Sony 14 mm f/1,8 GM",
         image: imgLens14
     },
     {
         id: 4,
-        heading: "Sony FE 85 mm f/1,8",
+        heading: "Sony 85 mm f/1,8",
         image: imgLens80
     },
     {
         id: 5,
-        heading: "Sony FE 70-200 mm f/2,8 G OSS",
+        heading: "Sony 70-200 mm f/2,8 G OSS",
         image: imgLens70200
     },
     {
