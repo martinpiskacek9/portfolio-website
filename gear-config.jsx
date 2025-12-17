@@ -9,7 +9,7 @@ import imgBag from "./src/imgs/gear/shimoda.webp";
 export const gear = [
     {
         id: 1,
-        heading: "Sony a7 III",
+        heading: "Sony A7 III",
         image: imgCamera
     },
     {
