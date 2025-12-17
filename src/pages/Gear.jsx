@@ -45,7 +45,7 @@ const Gear = () => {
 
           <GearHeading heading="camera bag" />
 
-          <div className="w-full flex items-center mt-8 mb-52">
+          <div className="w-full flex items-center mt-8">
             <GearCard heading={gear[7].heading} image={gear[7].image} />
           </div>
           

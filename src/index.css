@@ -29,7 +29,7 @@ h2 {
 }
 
 h3 {
-  @apply font-raleway font-black uppercase text-3xl tracking-wider;
+  @apply font-raleway font-black uppercase text-2xl md:text-3xl tracking-wider;
 }
 
 h4 {
