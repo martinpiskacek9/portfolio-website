@@ -11,7 +11,7 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
   };
 
   return (
-    <ul className="md:hidden text-2xl fixed inset-0 flex flex-col items-center justify-center gap-10 z-10 bg-neutral-950 motion-preset-slide-left motion-duration-500 font-bebas">
+    <ul className="lg:hidden text-2xl fixed inset-0 flex flex-col items-center justify-center gap-10 z-100 bg-neutral-950 motion-preset-slide-left motion-duration-500 font-raleway uppercase">
       <li>
         <NavLink to="/" onClick={close}>
           home
@@ -19,20 +19,14 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
       </li>
 
       <li>
-        <button onClick={() => handleSectionClick("galleries")}>
+        <button className="uppercase" onClick={() => handleSectionClick("galleries")}>
           galleries <FontAwesomeIcon icon={faChevronDown} />
         </button>
       </li>
 
       <li>
-        <button onClick={() => handleSectionClick("about")}>
+        <button className="uppercase" onClick={() => handleSectionClick("about")}>
           about me
-        </button>
-      </li>
-
-      <li>
-        <button onClick={() => handleSectionClick("contact")}>
-          contact
         </button>
       </li>
 
@@ -41,6 +35,13 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
           my gear
         </NavLink>
       </li>
+
+      <li>
+        <button className="uppercase" onClick={() => handleSectionClick("contact")}>
+          contact
+        </button>
+      </li>
+      
     </ul>
   );
 };
