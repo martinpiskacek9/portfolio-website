@@ -1,6 +1,6 @@
 const GearHeading = ({ heading }) => {
   return (
-    <div className="border-b pb-8 border-neutral-300/50 w-full mt-32">
+    <div className="border-b pb-8 border-neutral-300/50 w-full">
       <h3>{heading}</h3>
     </div>
   )
