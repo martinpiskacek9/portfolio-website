@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUpLong } from '@fortawesome/free-solid-svg-icons'
 
-const ScrollToTop = () => {
+const ScrollToTopButton = () => {
 
     const toTop = () => {
         window.scrollTo({
@@ -17,4 +17,4 @@ const ScrollToTop = () => {
   )
 }
 
-export default ScrollToTop;
+export default ScrollToTopButton;
