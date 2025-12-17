@@ -4,7 +4,7 @@ import { gear } from "../../gear-config";
 
 const Gear = () => {
   return (
-    <section className="w-full h-full">
+    <section className="w-full h-full ">
 
       {/* TOP STRÁNKY - HEADING S NADPISEM MY GEAR */}
         <div
@@ -15,13 +15,13 @@ const Gear = () => {
         </div>
 
         {/* CONTAINER */}
-        <div className="w-full h-full py-26 px-52 flex flex-col">
+        <div className="w-full h-full py-26 px-6 md:px-26 2xl:px-36 flex flex-col">
 
           {/* NADPIS KATEGORIE GEARU */}
           <GearHeading heading="camera body" />
 
           {/* CONTAINER S GEAR CARDS */}
-          <div className="w-full flex items-center mt-8 mb-24">
+          <div className="w-full flex items-center mt-16 mb-24">
             <GearCard heading={gear[0].heading} image={gear[0].image}  />
           </div>
 
@@ -29,7 +29,7 @@ const Gear = () => {
           <GearHeading heading="lenses" />
 
           {/* CONTAINER S GEAR CARDS */}
-          <div className="w-full flex gap-4 flex-wrap mt-8 mb-24">
+          <div className="w-full flex gap-4 flex-wrap mt-16 mb-24">
               <GearCard heading={gear[1].heading} image={gear[1].image} />
               <GearCard heading={gear[2].heading} image={gear[2].image} />
               <GearCard heading={gear[3].heading} image={gear[3].image} />
@@ -38,7 +38,7 @@ const Gear = () => {
 
           <GearHeading heading="tripods" />
 
-          <div className="w-full flex items-center gap-4 mt-8 mb-24 flex-wrap">
+          <div className="w-full flex items-center gap-4 mt-16 mb-24 flex-wrap">
             <GearCard heading={gear[5].heading} image={gear[5].image} />
             <GearCard heading={gear[6].heading} image={gear[6].image} />
           </div>
