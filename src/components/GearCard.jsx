@@ -1,15 +1,9 @@
-const GearCard = ({ heading, image, rotate }) => {
+const GearCard = ({ heading, image }) => {
   return (
-    <div className="border w-100 h-115 flex flex-col items-center gap-8 justify-end p-6">
+    <div className="border-3 border-neutral-500/20 bg-radial from-neutral-900 to-transparent rounded-4xl p-8 w-100 min-h-90 flex flex-col items-center justify-end gap-8">
       
-        <div className="w-full flex-1 flex items-center justify-center">
-          <img
-            src={image}
-            alt={heading}
-            className={`object-contain ${
-              rotate ? "rotate-90" : ""
-            }`}
-          />
+        <div className="w-full flex items-center justify-center">
+          <img src={image} alt={heading} />
         </div>
 
         <h4>{heading}</h4>

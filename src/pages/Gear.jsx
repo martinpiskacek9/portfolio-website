@@ -29,7 +29,7 @@ const Gear = () => {
           <GearHeading heading="lenses" />
 
           {/* CONTAINER S GEAR CARDS */}
-          <div className="w-full flex gap-4 mt-8 mb-24 flex-wrap">
+          <div className="w-full flex gap-4 mt-8 flex-wrap">
               <GearCard heading={gear[1].heading} image={gear[1].image} rotate />
               <GearCard heading={gear[2].heading} image={gear[2].image} rotate />
               <GearCard heading={gear[3].heading} image={gear[3].image} rotate />
