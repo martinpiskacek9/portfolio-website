@@ -4,7 +4,7 @@ const CATEGORY_META = {
   landscapes: { title: "landscapes" },
   automotive: { title: "automotive" },
   travel: { title: "travel" },
-  horses: { title: "horses" },
+  horseserá: { title: "horses" },
 };
 
 export default function GalleryCategory() {
