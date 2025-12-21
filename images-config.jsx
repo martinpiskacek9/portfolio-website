@@ -8,24 +8,24 @@ export const heroImages = [
         id: 1,
         heading: "Landscapes",
         image: imgLandscapes,
-        link: "/landscapes"
+        link: "/gallery/landscapes"
     },
     {
         id: 2,
         heading: "Automotive",
         image: imgAutomotive,
-        link: "/automotive"
+        link: "/gallery/automotive"
     },
     {
         id: 3,
         heading: "Travel",
         image: imgTravel,
-        link: "/travel"
+        link: "/gallery/travel"
     },
     {
         id: 4,
         heading: "People & Horses",
         image: imgHorses,
-        link: "/horses"
+        link: "/gallery/horses"
     }
 ]
