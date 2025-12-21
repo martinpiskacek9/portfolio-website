@@ -42,7 +42,7 @@ const Navbar = () => {
 
           <li>
             <button className="uppercase" onClick={() => scrollToSection("galleries")}>
-              galleries
+              gallery
             </button>
           </li>
 
