@@ -13,13 +13,13 @@ const Gallery = () => {
 
         <div className="w-full h-full py-6 md:py-26 px-6 md:px-26 2xl:px-36 flex flex-col gap-6 items-center justify-center">
             <div className="flex w-full h-140 md:h-full gap-6 md:flex-row flex-col">
-                <GalleryCategory heading={heroImages[0].heading} img={heroImages[0].image} className="flex-1" />
-                <GalleryCategory heading={heroImages[1].heading} img={heroImages[1].image} className="flex-1" />
+                <GalleryCategory link={heroImages[0].link} heading={heroImages[0].heading} img={heroImages[0].image} className="flex-1" />
+                <GalleryCategory link={heroImages[1].link} heading={heroImages[1].heading} img={heroImages[1].image} className="flex-1" />
             </div>
 
             <div className="flex w-full h-140 md:h-full gap-6 md:flex-row flex-col">
-                <GalleryCategory heading={heroImages[2].heading} img={heroImages[2].image} className="flex-1" />
-                <GalleryCategory heading={heroImages[3].heading} img={heroImages[3].image} className="flex-1" />
+                <GalleryCategory link={heroImages[2].link} heading={heroImages[2].heading} img={heroImages[2].image} className="flex-1" />
+                <GalleryCategory link={heroImages[3].link}heading={heroImages[3].heading} img={heroImages[3].image} className="flex-1" />
             </div>
         </div>
     </section>
