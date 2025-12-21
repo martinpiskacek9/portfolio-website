@@ -10,19 +10,13 @@ const Gallery = () => {
 
         <div className="w-full h-full py-26 px-6 md:px-26 2xl:px-36 flex gap-6">
             <div className="flex-1 h-full border flex flex-col gap-6">
-                <img src="imgs/_DSC2223.webp" alt="" />
-                <img src="imgs/_DSC2223.webp" alt="" />
-                <img src="imgs/_DSC2223.webp" alt="" />
+
             </div>
             <div className="flex-1 h-full flex flex-col border gap-6">
-                <img src="imgs/_DSC2223.webp" alt="" />
-                <img src="imgs/_DSC2223.webp" alt="" />
-                <img src="imgs/_DSC2223.webp" alt="" />
+
             </div>
             <div className="flex-1 h-full flex flex-col border gap-6">
-                <img src="imgs/_DSC2223.webp" alt="" />
-                <img src="imgs/_DSC2223.webp" alt="" />
-                <img src="imgs/_DSC2223.webp" alt="" />
+                
             </div>
         </div>
     </section>
