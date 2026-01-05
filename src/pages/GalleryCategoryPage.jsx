@@ -9,7 +9,7 @@ const CATEGORY_META = {
   landscapes: { title: "landscapes", heroImg: imgLandscapes },
   automotive: { title: "automotive", heroImg: imgAutomotive },
   travel: { title: "travel", heroImg: imgTravel},
-  horses: { title: "horses", heroImg: imgHorses },
+  horses: { title: "people & horses", heroImg: imgHorses },
 };
 
 export default function GalleryCategoryPage() {
@@ -66,7 +66,7 @@ export default function GalleryCategoryPage() {
           ERROR
         </p>
       ) : (
-        <div className="w-full h-full py-6 md:py-26 px-6 md:px-12 flex-col gap-2 grid grid-cols-1 md:grid-cols-3">
+        <div className="w-full h-full py-6 md:py-26 px-6 md:px-12 flex-col gap-6 md:gap-2 grid grid-cols-1 md:grid-cols-3">
           {cols.map((col, colIndex) => (
             <div key={colIndex} className="flex flex-col gap-6 md:gap-2">
               {col.map((img) => (
