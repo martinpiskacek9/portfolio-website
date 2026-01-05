@@ -5,6 +5,7 @@ import Gear from "./pages/Gear";
 import ScrollToTop from "./components/ScrollToTop";
 import Gallery from "./pages/Gallery";
 import GalleryCategoryPage from "./pages/GalleryCategoryPage";
+import ErrorPage from "./pages/ErrorPage";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/gear" element={<Gear />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/gallery/:category" element={<GalleryCategoryPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </main>
 

@@ -51,3 +51,11 @@ input, textarea {
 .divider-btn {
   @apply hover:text-neutral-50;
 }
+
+.errorpage-btn {
+  @apply hover:text-neutral-50;
+}
+
+.errorpage-btn span {
+  @apply text-blue-500/50 hover:duration-300 duration-300 hover:text-blue-500/40;
+}
