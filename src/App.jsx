@@ -3,6 +3,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Gear from "./pages/Gear";
 import ScrollToTop from "./components/ScrollToTop";
+import Gallery from "./pages/Gallery";
+import GalleryCategoryPage from "./pages/GalleryCategoryPage";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -18,6 +20,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gear" element={<Gear />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery/:category" element={<GalleryCategoryPage />} />
       </Routes>
     </main>
 
