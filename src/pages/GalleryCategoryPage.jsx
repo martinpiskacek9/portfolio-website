@@ -4,6 +4,7 @@ import imgAutomotive from "../imgs/automotive.webp";
 import imgHorses from "../imgs/horses.webp";
 import imgLandscapes from "../imgs/landscapes.webp";
 import imgTravel from "../imgs/travel.webp";
+import ErrorPage from "./ErrorPage";
 
 const CATEGORY_META = {
   landscapes: { title: "landscapes", heroImg: imgLandscapes },
@@ -45,9 +46,7 @@ export default function GalleryCategoryPage() {
 
   if (!meta) {
     return (
-      <section className="flex items-center justify-center w-full h-100">
-          <h1 className="text-2xl font-bold uppercase">error</h1>
-      </section>
+      <ErrorPage />
     );
   }
 
