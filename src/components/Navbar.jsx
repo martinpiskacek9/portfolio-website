@@ -1,4 +1,4 @@
-import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="lg:absolute z-110 fixed font-raleway uppercase flex items-center justify-between w-full p-8 tracking-wide lg:px-12 lg:py-12 duration-300">
+      <nav className="lg:absolute z-110 fixed font-raleway uppercase flex items-center justify-between w-full p-8 tracking-wide lg:p-12 duration-300">
 
         {/* LOGO */}
         <NavLink to="/" className="text-xl lg:text-2xl font-black tracking-wider">
@@ -65,7 +65,7 @@ const Navbar = () => {
 
         {/* MOBILE TOGGLE */}
         <button onClick={toggleNavbar} className="lg:hidden text-xl">
-          {isOpen ? <FontAwesomeIcon icon={faX} /> : <FontAwesomeIcon icon={faBars} />}
+          {isOpen ? <FontAwesomeIcon icon={faXmark} /> : <FontAwesomeIcon icon={faBars} />}
         </button>
       </nav>
 

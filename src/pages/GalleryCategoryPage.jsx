@@ -51,9 +51,7 @@ export default function GalleryCategoryPage() {
 
   const images = IMAGES[category] || [];
 
-  /* =========================
-     3 COLUMN MASONRY
-  ========================= */
+
   const cols = useMemo(() => {
     const c = [[], [], []];
     images.forEach((img, i) => c[i % 3].push(img));
@@ -62,7 +60,6 @@ export default function GalleryCategoryPage() {
 
   return (
     <section>
-      {/* ================= HERO ================= */}
       <div
         className="w-full h-80 md:h-160 flex items-center justify-center flex-col bg-cover bg-center bg-no-repeat"
         style={{
@@ -74,7 +71,6 @@ export default function GalleryCategoryPage() {
         </h1>
       </div>
 
-      {/* ================= GALLERY ================= */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-6 md:p-[4vw]">
         {cols.map((col, idx) => (
           <div key={idx} className="flex flex-col gap-2">
@@ -93,7 +89,6 @@ export default function GalleryCategoryPage() {
         ))}
       </div>
 
-      {/* ================= LIGHTBOX ================= */}
       <Lightbox
         isOpen={!!activeImage}
         imageSrc={activeImage}

@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 
 const Lightbox = ({ isOpen, imageSrc, onClose }) => {
@@ -22,23 +24,23 @@ const Lightbox = ({ isOpen, imageSrc, onClose }) => {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 bg-black/80 flex flex-col"
+      className="fixed inset-0 z-150 bg-black flex p-8 flex-col"
     >
-      <div className="flex justify-end p-6">
+      <div className="flex justify-end">
         <button
           onClick={onClose}
-          className="text-white uppercase text-sm tracking-wider hover:opacity-70"
+          className="hover:opacity-75 opacity-50 text-2xl"
         >
-          Close ✕
+          <FontAwesomeIcon icon={faXmark} />
         </button>
       </div>
 
-      <div className="flex flex-1 items-center justify-center px-6 pb-10">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <img
           onClick={(e) => e.stopPropagation()}
           src={imageSrc}
           alt=""
-          className="max-w-[90vw] max-h-[80vh] object-contain rounded-lg shadow-2xl"
+          className="max-w-[90vw] max-h-[80vh] object-contain"
         />
       </div>
     </div>
