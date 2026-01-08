@@ -8,6 +8,7 @@ import GalleryCategoryPage from "./pages/GalleryCategoryPage";
 import ErrorPage from "./pages/ErrorPage";
 
 import { Routes, Route } from "react-router-dom";
+import Lightbox from "./components/Lightbox";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
       </Routes>
     </main>
 
+    <Lightbox />
     <Footer />
     </>
   )
