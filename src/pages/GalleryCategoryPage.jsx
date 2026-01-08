@@ -1,87 +1,54 @@
 import { useParams } from "react-router-dom";
-import { useMemo } from "react";
-import imgAutomotive from "../imgs/automotive.webp";
-import imgHorses from "../imgs/horses.webp";
-import imgLandscapes from "../imgs/landscapes.webp";
-import imgTravel from "../imgs/travel.webp";
 import ErrorPage from "./ErrorPage";
 
 const CATEGORY_META = {
-  landscapes: { title: "landscapes", heroImg: imgLandscapes },
-  automotive: { title: "automotive", heroImg: imgAutomotive },
-  travel: { title: "travel", heroImg: imgTravel},
-  horses: { title: "people & horses", heroImg: imgHorses },
+  landscapes: { title: "Landscapes", heroImg: "/imgs/landscapes.webp" },
+  travel: { title: "Travel", heroImg: "/imgs/travel.webp" },
+  automotive: { title: "Automotive", heroImg: "/imgs/automotive.webp" },
+  horses: { title: "People & Horses", heroImg: "/imgs/horses.webp" },
 };
+
+const modules = import.meta.glob("../assets/imgs/thumbs/**/*.webp", { eager: true, import: "default" });
+
+const IMAGES = {};
+Object.entries(modules).forEach(([path, url]) => {
+  const match = path.match(/thumbs\/(.*?)\//);
+  if (match) {
+    const category = match[1];
+    if (!IMAGES[category]) IMAGES[category] = [];
+    IMAGES[category].push(url);
+  }
+});
 
 export default function GalleryCategoryPage() {
   const { category } = useParams();
   const meta = CATEGORY_META[category];
 
-  const allThumbs = useMemo(() => {
-    const modules = import.meta.glob("../assets/imgs/thumbs/**/*.webp", {
-        eager: true,
-        import: "default"
-    });
+  if (!meta) return <ErrorPage />;
 
-    return Object.entries(modules).map(([path, url]) => ({
-        path,
-        url,
-        name: path.split("/").pop() ?? path,
-    }));
-  }, []);
+  const images = IMAGES[category] || [];
 
-  const thumbsForCategory = useMemo(() => {
-    if(!category) return [];
-
-    return allThumbs
-        .filter((img) => img.path.includes(`/thumbs/${category}/`))
-        .sort((a, b) => a.name.localeCompare(b.name));
-  }, [allThumbs, category]);
-  
-  const cols = useMemo(() => {
-    const c = [[], [], []];
-    thumbsForCategory.forEach((img, i) => c[i % 3].push(img));
-    return c;
-  }, [thumbsForCategory]);
-
-  if (!meta) {
-    return (
-      <ErrorPage />
-    );
-  }
+  const cols = [[], []];
+  images.forEach((img, i) => cols[i % 2].push(img));
 
   return (
-    <section className="">
+    <section>
       <div
-        className="w-full py-12 px-6 md:px-16 2xl:px-28 h-80 md:h-100 flex items-center justify-center flex-col bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${meta.heroImg})` }}
-        >
-          <h1 className="uppercase text-4xl md:text-5xl font-montserrat font-black tracking-wide italic">{meta.title}</h1>
+        className="w-full h-80 md:h-120 flex items-center justify-center flex-col bg-cover bg-top bg-no-repeat bg-gray-300"
+        style={{ backgroundImage: `url(${meta.heroImg})` }}
+      >
+        <h1 className="text-5xl font-bold italic text-white uppercase font-raleway">{meta.title}</h1>
       </div>
 
-
-      {thumbsForCategory.length === 0 ? (
-        <p className="mt-6 text-neutral-400">
-          ERROR
-        </p>
-      ) : (
-        <div className="w-full h-full py-6 md:py-26 px-6 md:px-12 flex-col gap-6 md:gap-2 grid grid-cols-1 md:grid-cols-3">
-          {cols.map((col, colIndex) => (
-            <div key={colIndex} className="flex flex-col gap-6 md:gap-2">
-              {col.map((img) => (
-                <img
-                  key={img.path}
-                  src={img.url}
-                  alt={img.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-auto"
-                />
-              ))}
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-6 md:p-[4vw]">
+        {cols.map((col, idx) => (
+          <div key={idx} className="flex flex-col gap-2">
+            {col.map((src) => (
+              <img key={src} src={src} alt="" className="w-full h-auto" />
+            ))}
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
