@@ -11,14 +11,14 @@ const CATEGORY_META = {
   horses: { heading: heroImages[3].heading, heroImg: heroImages[3].image },
 };
 
-const fullModules = import.meta.glob("../assets/imgs/full/**/*.webp", {
+const fullModules = import.meta.glob("../assets/imgs/**/*.webp", {
   eager: true,
   import: "default",
 });
 
 const IMAGES = {};
 Object.entries(fullModules).forEach(([path, fullUrl]) => {
-  const match = path.match(/full\/(.*?)\//);
+  const match = path.match(/imgs\/(.*?)\//);
   if (!match) return;
 
   const category = match[1];
