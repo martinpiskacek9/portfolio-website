@@ -28,7 +28,6 @@ const App = () => {
       </Routes>
     </main>
 
-    <Lightbox />
     <Footer />
     </>
   )
