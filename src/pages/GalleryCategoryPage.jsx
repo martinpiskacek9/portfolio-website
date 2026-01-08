@@ -29,19 +29,19 @@ export default function GalleryCategoryPage() {
 
   const images = IMAGES[category] || [];
 
-  const cols = [[], []];
-  images.forEach((img, i) => cols[i % 2].push(img));
+  const cols = [[], [], []];
+  images.forEach((img, i) => cols[i % 3].push(img));
 
   return (
     <section>
       <div
-        className="w-full h-80 md:h-120 flex items-center justify-center flex-col bg-cover bg-bottom bg-no-repeat bg-gray-300"
+        className="w-full h-80 md:h-160 flex items-center justify-center flex-col bg-cover bg-center bg-no-repeat bg-gray-300"
         style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${meta.heroImg})` }}
       >
         <h1 className="text-3xl md:text-5xl font-montserrat font-black tracking-wide italic uppercase">{meta.heading}</h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-6 md:p-[4vw]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-6 md:p-[4vw]">
         {cols.map((col, idx) => (
           <div key={idx} className="flex flex-col gap-2">
             {col.map((src) => (
