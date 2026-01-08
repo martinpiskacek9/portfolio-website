@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useMemo, useState } from "react";
+import { useState, useMemo } from "react";
 import ErrorPage from "./ErrorPage";
 import Lightbox from "../components/Lightbox";
 import { heroImages } from "../../images-config";
@@ -11,46 +11,33 @@ const CATEGORY_META = {
   horses: { heading: heroImages[3].heading, heroImg: heroImages[3].image },
 };
 
-// import thumbs a full images
-const thumbsModules = import.meta.glob(
-  "../assets/imgs/thumbs/**/*.webp",
-  { eager: true, import: "default" }
-);
-
-const fullModules = import.meta.glob(
-  "../assets/imgs/full/**/*.webp",
-  { eager: true, import: "default" }
-);
+const fullModules = import.meta.glob("../assets/imgs/full/**/*.webp", {
+  eager: true,
+  import: "default",
+});
 
 const IMAGES = {};
-
-Object.entries(thumbsModules).forEach(([path, thumbUrl]) => {
-  const match = path.match(/thumbs\/(.*?)\//);
+Object.entries(fullModules).forEach(([path, fullUrl]) => {
+  const match = path.match(/full\/(.*?)\//);
   if (!match) return;
 
   const category = match[1];
-  const fullPath = path.replace("/thumbs/", "/full/");
-  const fullUrl = fullModules[fullPath];
-
   if (!IMAGES[category]) IMAGES[category] = [];
 
   IMAGES[category].push({
-    thumbUrl,
     fullUrl,
     name: path.split("/").pop(),
   });
 });
 
-export default function GalleryCategoryPage() {
+const GalleryCategoryPage = () => {
   const { category } = useParams();
   const meta = CATEGORY_META[category];
-
   const [activeImage, setActiveImage] = useState(null);
 
   if (!meta) return <ErrorPage />;
 
   const images = IMAGES[category] || [];
-
 
   const cols = useMemo(() => {
     const c = [[], [], []];
@@ -60,6 +47,7 @@ export default function GalleryCategoryPage() {
 
   return (
     <section>
+      {/* Hero */}
       <div
         className="w-full h-80 md:h-160 flex items-center justify-center flex-col bg-cover bg-center bg-no-repeat"
         style={{
@@ -71,24 +59,37 @@ export default function GalleryCategoryPage() {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-6 md:p-[4vw]">
-        {cols.map((col, idx) => (
-          <div key={idx} className="flex flex-col gap-2">
-            {col.map((img) => (
-              <img
-                key={img.thumbUrl}
-                src={img.thumbUrl}
-                alt={img.name}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-auto cursor-zoom-in"
-                onClick={() => setActiveImage(img.fullUrl)}
-              />
-            ))}
-          </div>
-        ))}
-      </div>
+      {/* Gallery */}
+      {images.length === 0 ? (
+        <p className="text-center mt-8 text-neutral-400">
+          No images found in this category.
+        </p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-6 md:p-[4vw]">
+          {cols.map((col, idx) => (
+            <div key={idx} className="flex flex-col gap-2">
+              {col.map((img) => {
 
+                const [loaded, setLoaded] = useState(false);
+
+                return (
+                  <img
+                    key={img.fullUrl}
+                    src={img.fullUrl}
+                    alt={img.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-auto cursor-zoom-in object-cover"
+                    onClick={() => setActiveImage(img.fullUrl)}
+                  />
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Lightbox */}
       <Lightbox
         isOpen={!!activeImage}
         imageSrc={activeImage}
@@ -97,3 +98,5 @@ export default function GalleryCategoryPage() {
     </section>
   );
 }
+
+export default GalleryCategoryPage;
