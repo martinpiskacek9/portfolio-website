@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
+import { heroImages } from "../../images-config";
 
 const CATEGORY_META = {
-  landscapes: { title: "Landscapes", heroImg: "/imgs/landscapes.webp" },
-  travel: { title: "Travel", heroImg: "/imgs/travel.webp" },
-  automotive: { title: "Automotive", heroImg: "/imgs/automotive.webp" },
-  horses: { title: "People & Horses", heroImg: "/imgs/horses.webp" },
+  landscapes: { heading: heroImages[0].heading, heroImg: heroImages[0].image },
+  automotive: { heading: heroImages[1].heading, heroImg: heroImages[1].image },
+  travel: { heading: heroImages[2].heading, heroImg: heroImages[2].image },
+  horses: { heading: heroImages[3].heading, heroImg: heroImages[3].image },
 };
 
 const modules = import.meta.glob("../assets/imgs/thumbs/**/*.webp", { eager: true, import: "default" });
@@ -34,10 +35,10 @@ export default function GalleryCategoryPage() {
   return (
     <section>
       <div
-        className="w-full h-80 md:h-120 flex items-center justify-center flex-col bg-cover bg-top bg-no-repeat bg-gray-300"
-        style={{ backgroundImage: `url(${meta.heroImg})` }}
+        className="w-full h-80 md:h-120 flex items-center justify-center flex-col bg-cover bg-bottom bg-no-repeat bg-gray-300"
+        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${meta.heroImg})` }}
       >
-        <h1 className="text-5xl font-bold italic text-white uppercase font-raleway">{meta.title}</h1>
+        <h1 className="text-3xl md:text-5xl font-montserrat font-black tracking-wide italic uppercase">{meta.heading}</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-6 md:p-[4vw]">
