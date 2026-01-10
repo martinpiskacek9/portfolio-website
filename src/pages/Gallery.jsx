@@ -5,7 +5,7 @@ const Gallery = () => {
   return (
     <section>
         <div
-        className="w-full h-80 md:h-100 flex items-center justify-center flex-col bg-cover bg-center bg-no-repeat"
+        className="w-full h-80 md:h-120 flex items-center justify-center flex-col bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(imgs/_DSC7881.webp)" }}
         >
             <h1 className="text-4xl md:text-5xl font-montserrat font-black tracking-wide italic">GALLERY</h1>
