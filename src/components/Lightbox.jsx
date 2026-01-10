@@ -34,10 +34,10 @@ const Lightbox = ({ isOpen, images, index, setIndex, onClose }) => {
       onClick={onClose}
       className="fixed inset-0 z-150 bg-black/95 flex items-center justify-center"
     >
-      <div className="relative flex items-center justify-center w-full px-22">
+      <div className="relative flex items-center justify-center w-full md:px-22 px-11">
         <button
           onClick={(e) => { e.stopPropagation(); prev(); }}
-          className="absolute left-6 text-3xl opacity-70 hover:opacity-100"
+          className="absolute md:left-6 left-2 text-xl md:text-3xl opacity-70 hover:opacity-100"
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
@@ -45,12 +45,12 @@ const Lightbox = ({ isOpen, images, index, setIndex, onClose }) => {
         <img
           onClick={(e) => e.stopPropagation()}
           src={images[index].url}
-          className="max-w-full max-h-[85vh] object-contain"
+          className="max-w-full max-h-[95vh] object-contain"
         />
 
         <button
           onClick={(e) => { e.stopPropagation(); next(); }}
-          className="absolute right-6 text-3xl opacity-70 hover:opacity-100"
+          className="absolute md:right-6 right-2 text-xl md:text-3xl opacity-70 hover:opacity-100"
         >
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
@@ -58,7 +58,7 @@ const Lightbox = ({ isOpen, images, index, setIndex, onClose }) => {
 
       <button
         onClick={(e) => { e.stopPropagation(); onClose(); }}
-        className="absolute top-6 right-6 text-2xl opacity-70 hover:opacity-100"
+        className="absolute top-4 right-4 md:top-6 md:right-6 text-xl md:text-2xl opacity-70 hover:opacity-100"
       >
         <FontAwesomeIcon icon={faXmark} />
       </button>

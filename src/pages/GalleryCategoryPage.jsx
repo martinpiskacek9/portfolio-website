@@ -40,7 +40,7 @@ const GalleryCategoryPage = () => {
     <section>
       {/* Hero */}
       <div
-        className="w-full h-80 md:h-160 flex items-center justify-center flex-col bg-cover bg-center bg-no-repeat"
+        className="w-full h-80 md:h-140 flex items-center justify-center flex-col bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(${meta.heroImg})`,
         }}
@@ -51,9 +51,9 @@ const GalleryCategoryPage = () => {
       </div>
 
       {/* Gallery */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-6 md:p-[4vw]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6 md:p-[4vw]">
         {cols.map((col, idx) => (
-          <div key={idx} className="flex flex-col gap-2">
+          <div key={idx} className="flex flex-col gap-4">
             {col.map((img) => (
               <img
                 key={img.url}
