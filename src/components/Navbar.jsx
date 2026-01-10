@@ -41,9 +41,7 @@ const Navbar = () => {
           </li>
 
           <li>
-            <button className="uppercase" onClick={() => scrollToSection("galleries")}>
-              gallery
-            </button>
+            <NavLink to="/gallery">gallery</NavLink>
           </li>
 
           <li>
