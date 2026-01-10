@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="lg:absolute z-110 fixed font-raleway uppercase flex items-center justify-between w-full p-8 tracking-wide lg:p-12 duration-300">
+      <nav className="lg:absolute z-110 fixed font-raleway uppercase flex items-start justify-between w-full p-8 tracking-wide lg:p-12 duration-300">
 
         {/* LOGO */}
         <NavLink to="/" className="text-xl lg:text-2xl font-black tracking-wider">
@@ -35,27 +35,51 @@ const Navbar = () => {
         </NavLink>
 
         {/* DESKTOP MENU */}
-        <ul className="hidden font-raleway lg:flex items-center justify-end gap-8 font-bold text-sm">
-          <li>
-            <NavLink to="/">home</NavLink>
+        <ul className="hidden font-raleway lg:flex items-start justify-end gap-8 font-bold text-sm h-10">
+          <li className="h-full">
+            <NavLink to="/" className="h-full flex items-center">home</NavLink>
           </li>
 
-          <li>
-            <NavLink to="/gallery">gallery</NavLink>
+          {/* GALLERY DROPDOWN */}
+          <li className="relative group h-full">
+            <NavLink to="/gallery" className="h-full flex items-center">gallery</NavLink>
+
+            <ul className="absolute flex opacity-0 invisible -left-4 flex-col gap-2 font-medium bg-neutral-950 px-4 py-2 group-hover:opacity-100 group-hover:visible transition-opacity duration-200">
+              <li>
+                <NavLink to="/gallery/landscapes">
+                  landscapes
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/gallery/automotive">
+                  automotive
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/gallery/travel">
+                  travel
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/gallery/horses">
+                  people & horses
+                </NavLink>
+              </li>
+            </ul>
           </li>
 
-          <li>
-            <button className="uppercase" onClick={() => scrollToSection("about")}>
+          <li className="h-full">
+            <button className="uppercase h-full flex items-center" onClick={() => scrollToSection("about")}>
               about me
             </button>
           </li>
 
-          <li>
-            <NavLink to="/gear">my gear</NavLink>
+          <li className="h-full">
+            <NavLink to="/gear" className="uppercase h-full flex items-center">my gear</NavLink>
           </li>
 
-          <li>
-            <button className="uppercase" onClick={() => scrollToSection("contact")}>
+          <li className="h-full">
+            <button className="uppercase h-full flex items-center" onClick={() => scrollToSection("contact")}>
               contact
             </button>
           </li>
