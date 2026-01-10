@@ -61,7 +61,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/gallery/horses">
+                <NavLink to="/gallery/horses" className="whitespace-nowrap">
                   people & horses
                 </NavLink>
               </li>
