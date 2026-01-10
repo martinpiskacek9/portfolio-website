@@ -11,37 +11,28 @@ const CATEGORY_META = {
   horses: { heading: heroImages[3].heading, heroImg: heroImages[3].image },
 };
 
-const fullModules = import.meta.glob("../assets/imgs/**/*.webp", {
+const modules = import.meta.glob("../assets/imgs/**/*.webp", {
   eager: true,
   import: "default",
 });
 
-const IMAGES = {};
-Object.entries(fullModules).forEach(([path, fullUrl]) => {
-  const match = path.match(/imgs\/(.*?)\//);
-  if (!match) return;
-
-  const category = match[1];
-  if (!IMAGES[category]) IMAGES[category] = [];
-
-  IMAGES[category].push({
-    fullUrl,
-    name: path.split("/").pop(),
-  });
+const ALL_IMAGES = Object.entries(modules).map(([path, url]) => {
+  const category = path.match(/imgs\/(.*?)\//)[1];
+  return { url, category };
 });
 
 const GalleryCategoryPage = () => {
   const { category } = useParams();
   const meta = CATEGORY_META[category];
-  const [activeImage, setActiveImage] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   if (!meta) return <ErrorPage />;
 
-  const images = IMAGES[category] || [];
+  const images = ALL_IMAGES.filter(img => img.category === category);
 
   const cols = useMemo(() => {
     const c = [[], [], []];
-    images.forEach((img, i) => c[i % 3].push(img));
+    images.forEach((img, i) => c[i % 3].push({ ...img, index: i }));
     return c;
   }, [images]);
 
@@ -60,43 +51,33 @@ const GalleryCategoryPage = () => {
       </div>
 
       {/* Gallery */}
-      {images.length === 0 ? (
-        <p className="text-center mt-8 text-neutral-400">
-          No images found in this category.
-        </p>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-6 md:p-[4vw]">
-          {cols.map((col, idx) => (
-            <div key={idx} className="flex flex-col gap-2">
-              {col.map((img) => {
-
-                const [loaded, setLoaded] = useState(false);
-
-                return (
-                  <img
-                    key={img.fullUrl}
-                    src={img.fullUrl}
-                    alt={img.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-auto cursor-zoom-in object-cover"
-                    onClick={() => setActiveImage(img.fullUrl)}
-                  />
-                );
-              })}
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-6 md:p-[4vw]">
+        {cols.map((col, idx) => (
+          <div key={idx} className="flex flex-col gap-2">
+            {col.map((img) => (
+              <img
+                key={img.url}
+                src={img.url}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-auto cursor-zoom-in object-cover"
+                onClick={() => setActiveIndex(img.index)}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
 
       {/* Lightbox */}
       <Lightbox
-        isOpen={!!activeImage}
-        imageSrc={activeImage}
-        onClose={() => setActiveImage(null)}
+        isOpen={activeIndex !== null}
+        images={images}
+        index={activeIndex}
+        setIndex={setActiveIndex}
+        onClose={() => setActiveIndex(null)}
       />
     </section>
   );
-}
+};
 
 export default GalleryCategoryPage;

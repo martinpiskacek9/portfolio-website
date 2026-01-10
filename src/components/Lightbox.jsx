@@ -1,13 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 
-const Lightbox = ({ isOpen, imageSrc, onClose }) => {
+const Lightbox = ({ isOpen, images, index, setIndex, onClose }) => {
   useEffect(() => {
     if (!isOpen) return;
 
     const handleKeyDown = (e) => {
       if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -17,32 +19,49 @@ const Lightbox = ({ isOpen, imageSrc, onClose }) => {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, index]);
 
   if (!isOpen) return null;
+
+  const next = () =>
+    setIndex((i) => (i + 1) % images.length);
+
+  const prev = () =>
+    setIndex((i) => (i - 1 + images.length) % images.length);
 
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-150 bg-black flex p-8 flex-col"
+      className="fixed inset-0 z-150 bg-black/95 flex items-center justify-center"
     >
-      <div className="flex justify-end">
+      <div className="relative flex items-center justify-center w-full px-22">
         <button
-          onClick={onClose}
-          className="hover:opacity-75 opacity-50 text-2xl"
+          onClick={(e) => { e.stopPropagation(); prev(); }}
+          className="absolute left-6 text-3xl opacity-70 hover:opacity-100"
         >
-          <FontAwesomeIcon icon={faXmark} />
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
+
+        <img
+          onClick={(e) => e.stopPropagation()}
+          src={images[index].url}
+          className="max-w-full max-h-[85vh] object-contain"
+        />
+
+        <button
+          onClick={(e) => { e.stopPropagation(); next(); }}
+          className="absolute right-6 text-3xl opacity-70 hover:opacity-100"
+        >
+          <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
 
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <img
-          onClick={(e) => e.stopPropagation()}
-          src={imageSrc}
-          alt=""
-          className="max-w-[90vw] max-h-[80vh] object-contain"
-        />
-      </div>
+      <button
+        onClick={(e) => { e.stopPropagation(); onClose(); }}
+        className="absolute top-6 right-6 text-2xl opacity-70 hover:opacity-100"
+      >
+        <FontAwesomeIcon icon={faXmark} />
+      </button>
     </div>
   );
 };
