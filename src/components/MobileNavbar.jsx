@@ -20,7 +20,7 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
 
       <li>
         <button className="uppercase" onClick={() => handleSectionClick("galleries")}>
-          galleries <FontAwesomeIcon icon={faChevronDown} />
+          gallery
         </button>
       </li>
 
