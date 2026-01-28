@@ -14,31 +14,31 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
     <ul className="lg:hidden text-2xl fixed inset-0 flex flex-col items-center justify-center gap-10 z-100 bg-neutral-950 motion-preset-slide-left motion-duration-500 font-raleway uppercase">
       <li>
         <NavLink to="/" onClick={close}>
-          home
+          úvod
         </NavLink>
       </li>
 
       <li>
         <button className="uppercase" onClick={() => handleSectionClick("galleries")}>
-          gallery
+          galerie
         </button>
       </li>
 
       <li>
         <button className="uppercase" onClick={() => handleSectionClick("about")}>
-          about me
+          o mně
         </button>
       </li>
 
       <li>
         <NavLink to="/gear" onClick={close}>
-          my gear
+          vybavení
         </NavLink>
       </li>
 
       <li>
         <button className="uppercase" onClick={() => handleSectionClick("contact")}>
-          contact
+          kontakt
         </button>
       </li>
       

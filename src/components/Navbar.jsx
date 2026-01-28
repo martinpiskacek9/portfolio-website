@@ -37,17 +37,21 @@ const Navbar = () => {
         {/* DESKTOP MENU */}
         <ul className="hidden font-raleway lg:flex items-start justify-end gap-8 font-bold text-sm h-10">
           <li className="h-full">
-            <NavLink to="/" className="h-full flex items-center">home</NavLink>
+            <NavLink to="/" className="h-full flex items-center">
+              úvod
+            </NavLink>
           </li>
 
           {/* GALLERY DROPDOWN */}
           <li className="relative group h-full">
-            <NavLink to="/gallery" className="h-full flex items-center">gallery</NavLink>
+            <NavLink to="/gallery" className="h-full flex items-center">
+              galerie
+            </NavLink>
 
             <ul className="absolute flex opacity-0 invisible -left-4 flex-col gap-2 font-medium bg-neutral-950 px-4 py-2 group-hover:opacity-100 group-hover:visible transition-opacity duration-200">
               <li>
                 <NavLink to="/gallery/landscapes">
-                  landscapes
+                  krajina
                 </NavLink>
               </li>
               <li>
@@ -57,12 +61,12 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink to="/gallery/travel">
-                  travel
+                  cestování
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/gallery/horses" className="whitespace-nowrap">
-                  people & horses
+                  lidé a koně
                 </NavLink>
               </li>
             </ul>
@@ -70,17 +74,19 @@ const Navbar = () => {
 
           <li className="h-full">
             <button className="uppercase h-full flex items-center" onClick={() => scrollToSection("about")}>
-              about me
+              o mně
             </button>
           </li>
 
           <li className="h-full">
-            <NavLink to="/gear" className="uppercase h-full flex items-center">my gear</NavLink>
+            <NavLink to="/gear" className="uppercase h-full flex items-center">
+              vybavení
+            </NavLink>
           </li>
 
           <li className="h-full">
             <button className="uppercase h-full flex items-center" onClick={() => scrollToSection("contact")}>
-              contact
+              kontakt
             </button>
           </li>
         </ul>

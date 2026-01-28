@@ -6,7 +6,7 @@ import imgTravel from "./src/imgs/travel.webp";
 export const heroImages = [
     {
         id: 1,
-        heading: "Landscapes",
+        heading: "Krajina",
         image: imgLandscapes,
         link: "/gallery/landscapes"
     },
@@ -18,13 +18,13 @@ export const heroImages = [
     },
     {
         id: 3,
-        heading: "Travel",
+        heading: "Cestování",
         image: imgTravel,
         link: "/gallery/travel"
     },
     {
         id: 4,
-        heading: "People & Horses",
+        heading: "Lidé a koně",
         image: imgHorses,
         link: "/gallery/horses"
     }

@@ -57,5 +57,5 @@ input, textarea {
 }
 
 .errorpage-btn span {
-  @apply text-blue-500/50 hover:duration-300 duration-300 hover:text-blue-500/40;
+  @apply text-blue-500/75 hover:duration-300 duration-300 hover:text-blue-500/60;
 }

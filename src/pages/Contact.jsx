@@ -39,7 +39,7 @@ const Contact = () => {
         backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url(imgs/_DSC7681.webp)`,
       }}
     >
-      <h2>Get in touch</h2>
+      <h2>napište mi</h2>
 
       <form
         ref={formRef}
@@ -48,7 +48,7 @@ const Contact = () => {
       >
         <div className="flex flex-col md:flex-row items-center gap-4 w-full">
           <div className="flex flex-col gap-2 flex-1 w-full">
-            <label htmlFor="form_name">Name</label>
+            <label htmlFor="form_name">jméno</label>
             <input
               id="form_name"
               name="user_name"
@@ -71,7 +71,7 @@ const Contact = () => {
         </div>
 
         <div className="flex flex-col gap-2 w-full">
-          <label htmlFor="form_message">Message</label>
+          <label htmlFor="form_message">zpráva</label>
           <textarea
             id="form_message"
             name="message"
