@@ -6,7 +6,7 @@ const Gallery = () => {
   return (
     <>
       <Helmet>
-        <title>Galerie – Martin Piskáček</title>
+        <title>Galerie - Martin Piskáček</title>
         <meta
           name="description"
           content="Vítejte v mé galerii! Prohlédněte si mé fotografie: krajina, portréty, akce, auta a zvířata."
@@ -35,7 +35,7 @@ const Gallery = () => {
             alt="Galerie fotografií – Martin Piskáček"
             className="absolute w-full h-full object-cover top-0 left-0"
           />
-          <div className="absolute w-full h-full bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+          <div className="absolute w-full h-full bg-linear-to-b from-black/60 via-black/40 to-black/60" />
           <h1 className="relative uppercase text-4xl md:text-5xl font-montserrat font-black tracking-wide italic z-10">
             galerie
           </h1>
