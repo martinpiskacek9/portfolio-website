@@ -7,40 +7,44 @@ const Hero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      next();
+      setCurrent((prev) => (prev + 1) % heroImages.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [current]);
+  }, []);
 
-  const next = () => {
-    setCurrent((prev) => (prev + 1) % heroImages.length);
-  };
-
-  const prev = () => {
-    setCurrent((prev) => (prev - 1 + heroImages.length) % heroImages.length);
-  };
+  const active = heroImages[current];
+  const isFirst = current === 0;
 
   return (
     <>
       <section
         id="hero"
-        key={heroImages[current].id}
-        className="flex justify-center items-end w-full h-screen bg-top bg-cover bg-no-repeat motion-preset-fade-lg motion-duration-3000 relative"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0), rgba(0,0,0,0.95)), url(${heroImages[current].image})`,
-        }}
+        className="relative flex justify-center items-end w-full h-screen overflow-hidden"
       >
+        {/* HERO IMAGE */}
+        <img
+          src={active.image}
+          alt={active.alt || "Fotografie – Martin Piskáček"}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading={isFirst ? "eager" : "lazy"}
+          fetchpriority={isFirst ? "high" : "auto"}
+        />
+
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-linear-to-b from-black/80 via-transparent to-black/95" />
+
+        {/* SEO H1 */}
         <h1 className="sr-only">
           Martin Piskáček – Fotograf z jižních Čech | Krajina, portréty, akce, auta
         </h1>
       </section>
 
       <HeroSlider
-        onNext={next}
-        onPrev={prev}
-        link={heroImages[current].link}
-        heading={heroImages[current].heading}
+        link={active.link}
+        heading={active.heading}
+        onNext={() => setCurrent((c) => (c + 1) % heroImages.length)}
+        onPrev={() => setCurrent((c) => (c - 1 + heroImages.length) % heroImages.length)}
       />
     </>
   );
