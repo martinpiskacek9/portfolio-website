@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import ErrorPage from "./ErrorPage";
 import Lightbox from "../components/Lightbox";
 import { heroImages } from "../../images-config";
-import { useEffect } from "react";
 
 const CATEGORY_META = {
   krajina: { heading: heroImages[0].heading, heroImg: heroImages[0].image },
@@ -60,47 +60,65 @@ const GalleryCategoryPage = () => {
     return c;
   }, [images, colCount]);
 
+  // Dynamický title a description pro SEO
+  const seoTitle = `${meta.heading} – Galerie - Martin Piskáček`;
+  const seoDescription = `Galerie ${meta.heading}. Prohlédněte si fotky v galerii - ${meta.heading}.`;
+  const ogImage = `https://www.martinpiskacek.cz/${meta.heroImg}`;
+
   return (
-    <section>
-      {/* Hero */}
-      <div
-        className="w-full h-80 md:h-140 flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.4)), url(${meta.heroImg})`,
-        }}
-      >
-        <h1 className="text-3xl md:text-5xl font-black italic uppercase">
-          {meta.heading}
-        </h1>
-      </div>
+    <>
+      <Helmet>
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
 
-      {/* Gallery */}
-      <div
-        className={`grid gap-4 p-6 md:p-[4vw]`}
-        style={{ gridTemplateColumns: `repeat(${colCount}, 1fr)` }}
-      >
-        {cols.map((col, colIdx) => (
-          <div key={colIdx} className="flex flex-col gap-4">
-            {col.map(img => (
-              <img
-                key={img.url}
-                src={img.url}
-                className="w-full cursor-zoom-in object-cover"
-                onClick={() => setActiveIndex(img.index)}
-              />
-            ))}
-          </div>
-        ))}
-      </div>
+        {/* OpenGraph */}
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://www.martinpiskacek.cz/galerie/${category}`} />
+        <meta property="og:image" content={ogImage} />
+      </Helmet>
 
-      <Lightbox
-        isOpen={activeIndex !== null}
-        images={images}
-        index={activeIndex}
-        setIndex={setActiveIndex}
-        onClose={() => setActiveIndex(null)}
-      />
-    </section>
+      <section>
+        {/* Hero */}
+        <div
+          className="w-full h-80 md:h-140 flex items-center justify-center bg-cover bg-center"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.4)), url(${meta.heroImg})`,
+          }}
+        >
+          <h1 className="text-3xl md:text-5xl font-black italic uppercase">{meta.heading}</h1>
+        </div>
+
+        {/* Gallery */}
+        <div
+          className={`grid gap-4 p-6 md:p-[4vw]`}
+          style={{ gridTemplateColumns: `repeat(${colCount}, 1fr)` }}
+        >
+          {cols.map((col, colIdx) => (
+            <div key={colIdx} className="flex flex-col gap-4">
+              {col.map(img => (
+                <img
+                  key={img.url}
+                  src={img.url}
+                  className="w-full cursor-zoom-in object-cover"
+                  onClick={() => setActiveIndex(img.index)}
+                  alt={`${meta.heading} – fotografie ${img.index + 1}`}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <Lightbox
+          isOpen={activeIndex !== null}
+          images={images}
+          index={activeIndex}
+          setIndex={setActiveIndex}
+          onClose={() => setActiveIndex(null)}
+        />
+      </section>
+    </>
   );
 };
 

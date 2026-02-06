@@ -1,9 +1,8 @@
-import HeroSlider from "../components/HeroSlider"
+import HeroSlider from "../components/HeroSlider";
 import { heroImages } from "../../images-config";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
-
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -25,15 +24,26 @@ const Hero = () => {
   return (
     <>
       <section
-      id="hero"
-      key={heroImages[current].id}
-      className="flex justify-center items-end w-full h-screen bg-top bg-cover bg-no-repeat motion-preset-fade-lg motion-duration-3000"
-      style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0), rgba(0,0,0,0.95)), url(${heroImages[current].image})` }}
+        id="hero"
+        key={heroImages[current].id}
+        className="flex justify-center items-end w-full h-screen bg-top bg-cover bg-no-repeat motion-preset-fade-lg motion-duration-3000 relative"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0), rgba(0,0,0,0.95)), url(${heroImages[current].image})`,
+        }}
       >
+        <h1 className="sr-only">
+          Martin Piskáček – Fotograf z jižních Čech | Krajina, portréty, akce, auta
+        </h1>
       </section>
-      <HeroSlider onNext={next} onPrev={prev} link={heroImages[current].link} heading={heroImages[current].heading} />
-    </>
-  )
-}
 
-export default Hero
+      <HeroSlider
+        onNext={next}
+        onPrev={prev}
+        link={heroImages[current].link}
+        heading={heroImages[current].heading}
+      />
+    </>
+  );
+};
+
+export default Hero;

@@ -7,27 +7,28 @@ import GalleryCategoryPage from "./pages/GalleryCategoryPage";
 import ErrorPage from "./pages/ErrorPage";
 
 import { Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 const App = () => {
   return (
-    <>
-    <header>
-      <Navbar />
-    </header>
+    <HelmetProvider>
+      <header>
+        <Navbar />
+      </header>
 
-    <main>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/galerie" element={<Gallery />} />
-        <Route path="/galerie/:category" element={<GalleryCategoryPage />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </main>
+      <main>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/galerie" element={<Gallery />} />
+          <Route path="/galerie/:category" element={<GalleryCategoryPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </main>
 
-    <Footer />
-    </>
-  )
-}
+      <Footer />
+    </HelmetProvider>
+  );
+};
 
 export default App;
