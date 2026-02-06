@@ -21,7 +21,7 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="lg:hidden fixed inset-0 z-100 bg-neutral-950 overflow-hidden font-raleway uppercase">
+    <div className="lg:hidden fixed inset-0 z-100 bg-neutral-950 overflow-hidden font-montserrat uppercase">
 
       {/* SLIDING CONTAINER */}
       <div

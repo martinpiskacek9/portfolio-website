@@ -90,7 +90,7 @@ const GalleryCategoryPage = () => {
           <div className="absolute w-full h-full bg-linear-to-b from-black/60 via-black/40 to-black/60" />
           <h1 className="relative text-3xl md:text-5xl font-black italic uppercase z-10">
             {meta.heading}
-          </h1>
+          </h1> 
         </div>
 
         {/* Gallery */}

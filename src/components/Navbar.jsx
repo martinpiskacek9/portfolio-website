@@ -28,12 +28,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="lg:absolute z-110 fixed font-raleway uppercase flex items-start justify-between w-full p-8 tracking-wide lg:px-22 pg:py-12 duration-300">
+      <nav className="lg:absolute z-110 fixed font-montserrat uppercase flex items-start justify-between w-full p-8 tracking-wide lg:px-22 pg:py-12 duration-300">
 
         {/* LOGO */}
         <NavLink
           to="/"
-          className={`lg:text-2xl text-xl font-black tracking-wider 
+          className={`lg:text-3xl text-2xl font-black tracking-wider font-bebas
             ${isOpen ? "hidden lg:block" : "block"}`}
         >
           Martin Piskáček
