@@ -86,7 +86,7 @@ const GalleryCategoryPage = () => {
             src={meta.heroImg}
             alt={`${meta.heading} – hero image`}
             className="absolute w-full h-full object-cover top-0 left-0"
-            fetchpriority="high"
+            fetchPriority="high"
           />
           <div className="absolute w-full h-full bg-linear-to-b from-black/60 via-black/40 to-black/60" />
           <h1 className="relative text-3xl md:text-5xl font-black italic uppercase z-10">

@@ -28,7 +28,7 @@ const Hero = () => {
           alt={active.alt || "Fotografie – Martin Piskáček"}
           className="absolute inset-0 w-full h-full object-cover"
           loading={isFirst ? "eager" : "lazy"}
-          fetchpriority={isFirst ? "high" : "auto"}
+          fetchPriority={isFirst ? "high" : "auto"}
         />
 
         {/* OVERLAY */}

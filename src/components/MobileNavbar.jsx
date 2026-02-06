@@ -21,7 +21,7 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="lg:hidden fixed inset-0 z-100 bg-neutral-950 overflow-hidden font-montserrat uppercase">
+    <div className="lg:hidden fixed inset-0 z-100 bg-neutral-950 overflow-hidden font-raleway uppercase">
 
       {/* SLIDING CONTAINER */}
       <div
@@ -31,7 +31,7 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
       >
 
         {/* MAIN MENU */}
-        <ul className="w-1/2 h-full flex flex-col items-center justify-center gap-8 text-2xl">
+        <ul className="w-1/2 h-full flex flex-col items-center justify-center gap-24 sm:gap-8 text-5xl sm:text-2xl">
           <li>
             <NavLink
               to="/"
