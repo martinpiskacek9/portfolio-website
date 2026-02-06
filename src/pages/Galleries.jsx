@@ -13,6 +13,7 @@ const Galleries = () => {
         <GalleryCategory link={heroImages[1].link} heading={heroImages[1].heading} img={heroImages[1].image} className="w-full md:w-80 xl:w-70" />
         <GalleryCategory link={heroImages[2].link} heading={heroImages[2].heading} img={heroImages[2].image} className="w-full md:w-80 xl:w-70" />
         <GalleryCategory link={heroImages[3].link} heading={heroImages[3].heading} img={heroImages[3].image} className="w-full md:w-80 xl:w-70" />
+        <GalleryCategory link={heroImages[4].link} heading={heroImages[4].heading} img={heroImages[4].image} className="w-full md:w-80 xl:w-70" />
       </div>
     </section>
   )

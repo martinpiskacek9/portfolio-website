@@ -8,7 +8,7 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setStatus("Odesílání zprávy...");
 
     emailjs
       .sendForm(
@@ -21,12 +21,12 @@ const Contact = () => {
       )
       .then(
         () => {
-          setStatus("Message sent successfully.");
+          setStatus("Zpráva odeslána.");
           e.target.reset();
         },
         (error) => {
           console.error("EmailJS error:", error);
-          setStatus("Failed to send the messasge.");
+          setStatus("Zprávu se nepodařilo odeslat.");
         }
       );
   };
