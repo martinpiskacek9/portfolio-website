@@ -31,7 +31,7 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
       >
 
         {/* MAIN MENU */}
-        <ul className="w-1/2 h-full flex flex-col items-center justify-center gap-24 sm:gap-8 text-5xl sm:text-2xl">
+        <ul className="w-1/2 h-full flex flex-col items-center justify-center gap-8 text-2xl">
           <li>
             <NavLink
               to="/"
