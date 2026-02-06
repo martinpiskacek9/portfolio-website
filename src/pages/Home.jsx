@@ -27,6 +27,8 @@ const Home = () => {
           property="og:image"
           content="https://www.martinpiskacek.cz/imgs/_DSC7681.webp"
         />
+
+        <link rel="canonical" href="https://www.martinpiskacek.cz/" />
       </Helmet>
 
       {/* Obsah stránky */}

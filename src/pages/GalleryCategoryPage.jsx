@@ -60,9 +60,8 @@ const GalleryCategoryPage = () => {
     return c;
   }, [images, colCount]);
 
-  // Dynamický title a description pro SEO
   const seoTitle = `${meta.heading} – Galerie - Martin Piskáček`;
-  const seoDescription = `Galerie ${meta.heading}. Prohlédněte si fotky v galerii - ${meta.heading}.`;
+  const seoDescription = `Galerie ${meta.heading}. Prohlédněte si fotografie z galerie ${meta.heading}.`;
   const ogImage = `https://www.martinpiskacek.cz/${meta.heroImg}`;
 
   return (
@@ -70,6 +69,7 @@ const GalleryCategoryPage = () => {
       <Helmet>
         <title>{seoTitle}</title>
         <meta name="description" content={seoDescription} />
+        <link rel="canonical" href={`https://www.martinpiskacek.cz/galerie/${category}`} />
 
         {/* OpenGraph */}
         <meta property="og:title" content={seoTitle} />
@@ -81,13 +81,16 @@ const GalleryCategoryPage = () => {
 
       <section>
         {/* Hero */}
-        <div
-          className="w-full h-80 md:h-140 flex items-center justify-center bg-cover bg-center"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.4)), url(${meta.heroImg})`,
-          }}
-        >
-          <h1 className="text-3xl md:text-5xl font-black italic uppercase">{meta.heading}</h1>
+        <div className="w-full h-80 md:h-140 relative flex items-center justify-center">
+          <img
+            src={meta.heroImg}
+            alt={`${meta.heading} – hlavní fotografie galerie Martina Piskáčka`}
+            className="absolute w-full h-full object-cover top-0 left-0"
+          />
+          <div className="absolute w-full h-full bg-linear-to-b from-black/60 via-black/40 to-black/60" />
+          <h1 className="relative text-3xl md:text-5xl font-black italic uppercase z-10">
+            {meta.heading}
+          </h1>
         </div>
 
         {/* Gallery */}
