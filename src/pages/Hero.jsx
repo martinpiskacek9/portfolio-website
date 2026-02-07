@@ -11,7 +11,7 @@ const Hero = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [current]);
 
   const active = heroImages[current];
   const isFirst = current === 0;
@@ -20,9 +20,9 @@ const Hero = () => {
     <>
       <section
         id="hero"
-        className="relative flex justify-center items-end w-full h-screen overflow-hidden"
+        key={heroImages[current].id}
+        className="relative flex justify-center items-end w-full h-screen overflow-hidden motion-preset-fade-lg motion-duration-3000"
       >
-        {/* HERO IMAGE */}
         <img
           src={active.image}
           alt={active.alt || "Fotografie – Martin Piskáček"}
@@ -31,10 +31,8 @@ const Hero = () => {
           fetchPriority={isFirst ? "high" : "auto"}
         />
 
-        {/* OVERLAY */}
         <div className="absolute inset-0 bg-linear-to-b from-black/80 via-transparent to-black/95" />
 
-        {/* SEO H1 */}
         <h1 className="sr-only">
           Martin Piskáček – Fotograf z jižních Čech | Krajina, portréty, akce, auta
         </h1>

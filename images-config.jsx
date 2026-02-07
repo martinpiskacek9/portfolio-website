@@ -12,10 +12,10 @@ export const heroImages = [
         link: "/galerie/krajina"
     },
     {
-        id: 2,
-        heading: "Automotive",
-        image: imgAutomotive,
-        link: "/galerie/automotive"
+        id: 4,
+        heading: "Lidé a koně",
+        image: imgHorses,
+        link: "/galerie/kone"
     },
     {
         id: 3,
@@ -24,10 +24,10 @@ export const heroImages = [
         link: "/galerie/cestovani"
     },
     {
-        id: 4,
-        heading: "Lidé a koně",
-        image: imgHorses,
-        link: "/galerie/kone"
+        id: 2,
+        heading: "Automotive",
+        image: imgAutomotive,
+        link: "/galerie/automotive"
     },
     {
         id: 5,
