@@ -7,9 +7,9 @@ import { heroImages } from "../../images-config";
 
 const CATEGORY_META = {
   krajina: { heading: heroImages[0].heading, heroImg: heroImages[0].image },
-  automotive: { heading: heroImages[1].heading, heroImg: heroImages[1].image },
+  automotive: { heading: heroImages[3].heading, heroImg: heroImages[3].image },
   cestovani: { heading: heroImages[2].heading, heroImg: heroImages[2].image },
-  kone: { heading: heroImages[3].heading, heroImg: heroImages[3].image },
+  kone: { heading: heroImages[1].heading, heroImg: heroImages[1].image },
   akce: { heading: heroImages[4].heading, heroImg: heroImages[4].image },
 };
 
@@ -85,7 +85,7 @@ const GalleryCategoryPage = () => {
           <img
             src={meta.heroImg}
             alt={`${meta.heading} – hero image`}
-            className="absolute w-full h-full object-cover top-0 left-0"
+            className="absolute w-full h-full object-cover object-[50%_40%]"
             fetchPriority="high"
           />
           <div className="absolute w-full h-full bg-linear-to-b from-black/60 via-black/40 to-black/60" />
