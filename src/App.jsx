@@ -8,6 +8,7 @@ import ErrorPage from "./pages/ErrorPage";
 
 import { Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
       </main>
 
       <Footer />
+      <Analytics />
     </HelmetProvider>
   );
 };
