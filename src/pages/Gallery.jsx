@@ -9,7 +9,7 @@ const Gallery = () => {
         <title>Galerie - Martin Piskáček</title>
         <meta
           name="description"
-          content="Vítejte v mé galerii! Prohlédněte si mé fotografie: krajina, portréty, akce, auta a zvířata."
+          content="Vítejte v mé galerii! Prohlédněte si mé fotografie: koně, portréty, akce, auta."
         />
         <link rel="canonical" href="https://www.martinpiskacek.cz/galerie" />
 
@@ -17,7 +17,7 @@ const Gallery = () => {
         <meta property="og:title" content="Galerie - Martin Piskáček" />
         <meta
           property="og:description"
-          content="Vítejte v mé galerii! Prohlédněte si mé fotografie: krajina, portréty, akce, auta a zvířata."
+          content="Vítejte v mé galerii! Prohlédněte si mé fotografie: koně, portréty, akce, auta."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.martinpiskacek.cz/galerie" />

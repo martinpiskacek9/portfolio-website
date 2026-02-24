@@ -7,6 +7,8 @@ import MobileNavbar from "./MobileNavbar";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -14,8 +16,14 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeAll = () => {
+    setIsGalleryOpen(false);
+    setIsOpen(false);
+  };
+
   // PŘESMĚROVÁNÍ A SCROLL
   const scrollToSection = (id) => {
+    closeAll();
     if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
@@ -35,41 +43,63 @@ const Navbar = () => {
           to="/"
           className={`lg:text-2xl text-xl font-black tracking-wider font-bebas
             ${isOpen ? "hidden lg:block" : "block"}`}
+          onClick={closeAll}
         >
           Martin Piskáček
         </NavLink>
 
         {/* DESKTOP MENU */}
         <ul className="hidden lg:flex items-start justify-end gap-10 font-bold text-sm h-10">
+
           <li className="h-full">
-            <NavLink to="/" className="h-full flex items-center">
+            <NavLink to="/" className="h-full flex items-center" onClick={closeAll}>
               úvod
             </NavLink>
           </li>
 
-          {/* GALLERY DROPDOWN */}
-          <li className="relative group h-full">
-            <NavLink to="/galerie" className="h-full flex items-center">
+          {/* GALLERY */}
+          <li
+            className="relative h-full"
+            onMouseEnter={() => setIsGalleryOpen(true)}
+            onMouseLeave={() => setIsGalleryOpen(false)}
+          >
+            <NavLink
+              to="/galerie"
+              className="h-full flex items-center"
+              onClick={closeAll}
+            >
               galerie
             </NavLink>
 
-            <ul className="absolute flex opacity-0 invisible -left-4 flex-col gap-2 font-medium bg-neutral-950 px-4 py-2 group-hover:opacity-100 group-hover:visible transition-opacity duration-200">
+            <ul
+              className={`absolute -left-4 flex flex-col gap-2 font-medium bg-neutral-950 px-4 py-2 transition-all duration-200
+                ${isGalleryOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"}`}
+            >
               <li>
-                <NavLink to="/galerie/krajina">krajina</NavLink>
-              </li>
-              <li>
-                <NavLink to="/galerie/automotive">automotive</NavLink>
-              </li>
-              <li>
-                <NavLink to="/galerie/cestovani">cestování</NavLink>
-              </li>
-              <li>
-                <NavLink to="/galerie/kone" className="whitespace-nowrap">
+                <NavLink to="/galerie/kone" onClick={closeAll}>
                   lidé a koně
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/galerie/akce" className="whitespace-nowrap">
+                <NavLink to="/galerie/krajina" onClick={closeAll}>
+                  krajina
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/galerie/automotive"
+                  className="whitespace-nowrap"
+                  onClick={closeAll}
+                >
+                  automotive
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/galerie/akce"
+                  className="whitespace-nowrap"
+                  onClick={closeAll}
+                >
                   akce
                 </NavLink>
               </li>
@@ -115,7 +145,7 @@ const Navbar = () => {
       {/* MOBILE MENU */}
       <MobileNavbar
         isOpen={isOpen}
-        close={() => setIsOpen(false)}
+        close={closeAll}
         scrollToSection={scrollToSection}
       />
     </>

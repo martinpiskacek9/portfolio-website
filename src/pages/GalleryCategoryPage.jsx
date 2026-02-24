@@ -6,11 +6,10 @@ import Lightbox from "../components/Lightbox";
 import { heroImages } from "../../images-config";
 
 const CATEGORY_META = {
-  krajina: { heading: heroImages[0].heading, heroImg: heroImages[0].image },
-  automotive: { heading: heroImages[3].heading, heroImg: heroImages[3].image },
-  cestovani: { heading: heroImages[2].heading, heroImg: heroImages[2].image },
-  kone: { heading: heroImages[1].heading, heroImg: heroImages[1].image },
-  akce: { heading: heroImages[4].heading, heroImg: heroImages[4].image },
+  kone: { heading: heroImages[0].heading, heroImg: heroImages[0].image },
+  krajina: { heading: heroImages[1].heading, heroImg: heroImages[1].image },
+  automotive: { heading: heroImages[2].heading, heroImg: heroImages[2].image },
+  akce: { heading: heroImages[3].heading, heroImg: heroImages[3].image },
 };
 
 const modules = import.meta.glob(

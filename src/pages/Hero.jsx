@@ -34,7 +34,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-linear-to-b from-black/80 via-transparent to-black/95" />
 
         <h1 className="sr-only">
-          Martin Piskáček – Fotograf z jižních Čech | Krajina, portréty, akce, auta
+          Martin Piskáček – Fotograf z jižních Čech | Koně, portréty, akce, auta
         </h1>
       </section>
 

@@ -13,13 +13,13 @@ const Home = () => {
 
         <meta
           name="description"
-          content="Fotograf z jižních Čech - krajina, akce, portréty, auta, zvířata. Zachycuji atmosféru okamžiku v té nejhezčí podobě."
+          content="Fotograf z jižních Čech - koně, akce, portréty, auta. Zachycuji atmosféru okamžiku v té nejhezčí podobě."
         />
 
         <meta property="og:title" content="Martin Piskáček - Fotograf" />
         <meta
           property="og:description"
-          content="Fotograf z jižních Čech - krajina, akce, portréty, auta, zvířata. Zachycuji atmosféru okamžiku v té nejhezčí podobě."
+          content="Fotograf z jižních Čech - koně, akce, portréty, auta. Zachycuji atmosféru okamžiku v té nejhezčí podobě."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.martinpiskacek.cz/" />
