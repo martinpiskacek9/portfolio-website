@@ -12,20 +12,20 @@ export const heroImages = [
     },
     {
         id: 2,
+        heading: "Akce",
+        image: imgEvent,
+        link: "/galerie/akce"
+    },
+    {
+        id: 3,
         heading: "Krajina",
         image: imgLandscapes,
         link: "/galerie/krajina"
     },
     {
-        id: 3,
+        id: 4,
         heading: "Automotive",
         image: imgAutomotive,
         link: "/galerie/automotive"
-    },
-    {
-        id: 4,
-        heading: "Akce",
-        image: imgEvent,
-        link: "/galerie/akce"
     }
 ]

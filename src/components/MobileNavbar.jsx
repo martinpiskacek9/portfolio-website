@@ -98,6 +98,11 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/galerie/akce" onClick={handleNavClick}>
+              akce
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/galerie/krajina" onClick={handleNavClick}>
               krajina
             </NavLink>
@@ -105,11 +110,6 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
           <li>
             <NavLink to="/galerie/automotive" onClick={handleNavClick}>
               automotive
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/galerie/akce" onClick={handleNavClick}>
-              akce
             </NavLink>
           </li>
         </ul>

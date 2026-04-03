@@ -81,7 +81,16 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/galerie/krajina" onClick={closeAll}>
+                <NavLink to="/galerie/akce" onClick={closeAll}>
+                  akce
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/galerie/krajina"
+                  className="whitespace-nowrap"
+                  onClick={closeAll}
+                >
                   krajina
                 </NavLink>
               </li>
@@ -92,15 +101,6 @@ const Navbar = () => {
                   onClick={closeAll}
                 >
                   automotive
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/galerie/akce"
-                  className="whitespace-nowrap"
-                  onClick={closeAll}
-                >
-                  akce
                 </NavLink>
               </li>
             </ul>
