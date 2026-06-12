@@ -38,8 +38,8 @@ const Hero = () => {
         <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/30 to-transparent" />
       </section>
 
-      <div className="h-full w-full absolute top-0 px-11 pt-60 flex">
-        <div className="flex p-0 md:p-11 w-full lg:items-start items-center justify-center flex-col">
+      <div className="h-full w-full absolute px-11 top-0 flex">
+        <div className="flex md:px-11 w-full lg:items-start justify-end mb-50 lg:mb-40 items-center flex-col">
           <h1 className="text-4xl sm:text-5xl text-center font-montserrat font-black mb-2 lg:text-6xl">
             MARTIN PISKÁČEK
           </h1>
