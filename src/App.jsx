@@ -5,6 +5,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import Gallery from "./pages/Gallery";
 import GalleryCategoryPage from "./pages/GalleryCategoryPage";
 import ErrorPage from "./pages/ErrorPage";
+import About from "./pages/About";
+import Cenik from "./pages/Cenik";
 
 import { Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -21,6 +23,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/galerie" element={<Gallery />} />
+          <Route path="/cenik" element={<Cenik />} />
+          <Route path="/o-mne" element={<About />} />
           <Route path="/galerie/:category" element={<GalleryCategoryPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>

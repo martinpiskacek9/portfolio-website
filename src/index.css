@@ -109,7 +109,11 @@ input, textarea {
 }
 
 .btn {
-  @apply text-neutral-950 hover:text-neutral-950;
+  @apply text-neutral-50 font-medium hover:text-neutral-950 hover:bg-neutral-50 hover:border-neutral-50;
+}
+
+.btn2 {
+  @apply font-medium text-neutral-50 hover:text-neutral-950 border-neutral-50 bg-black hover:bg-neutral-50 hover:border-neutral-50;
 }
 
 .divider-btn {

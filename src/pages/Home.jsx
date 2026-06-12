@@ -34,8 +34,6 @@ const Home = () => {
       {/* Obsah stránky */}
       <Hero />
       <Galleries />
-      <PageDivider />
-      <About />
       <Contact />
     </>
   );

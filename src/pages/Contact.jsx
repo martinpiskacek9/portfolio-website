@@ -46,10 +46,30 @@ const Contact = () => {
       id="contact"
       className="w-full flex flex-col items-center justify-start py-26 bg-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url(imgs/_DSC7681.webp)`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url(imgs/hvezdos3-Edit.jpg)`,
       }}
     >
-      <h2 className="mb-12">napište mi</h2>
+      <h2 className="mb-4">kontakt</h2>
+
+      <p className="text-center max-w-2xl mb-12 text-neutral-300 leading-relaxed px-6">
+        Máte zájem o focení?
+        <br />
+        Kontaktujte mě prostřednictvím formuláře nebo přímo na{" "}
+        <a
+          href="mailto:martin.piskacek9@gmail.com"
+          className="underline hover:text-white transition-colors"
+        >
+          martin.piskacek9@gmail.com
+        </a>
+        {" "}či{" "}
+        <a
+          href="tel:+420728230914"
+          className="underline hover:text-white transition-colors"
+        >
+          +420&nbsp;728&nbsp;230&nbsp;914
+        </a>
+        .
+      </p>
 
       <form
         ref={formRef}

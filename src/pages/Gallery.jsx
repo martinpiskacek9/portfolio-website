@@ -9,7 +9,7 @@ const Gallery = () => {
         <title>Galerie - Martin Piskáček</title>
         <meta
           name="description"
-          content="Vítejte v mé galerii! Prohlédněte si mé fotografie: koně, portréty, akce, auta."
+          content="Vítejte v mé galerii! Prohlédněte si mé fotografie: eventy, portréty, svatby, chaty."
         />
         <link rel="canonical" href="https://www.martinpiskacek.cz/galerie" />
 
@@ -17,21 +17,21 @@ const Gallery = () => {
         <meta property="og:title" content="Galerie - Martin Piskáček" />
         <meta
           property="og:description"
-          content="Vítejte v mé galerii! Prohlédněte si mé fotografie: koně, portréty, akce, auta."
+          content="Vítejte v mé galerii! Prohlédněte si mé fotografie: eventy, portréty, svatby, chaty."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.martinpiskacek.cz/galerie" />
         <meta
           property="og:image"
-          content="https://www.martinpiskacek.cz/imgs/_DSC7881.webp"
+          content="https://www.martinpiskacek.cz/imgs/_DSC5754.webp"
         />
       </Helmet>
 
       <section>
         {/* Hero */}
-        <div className="w-full h-80 md:h-140 relative flex items-center justify-center flex-col">
+        <div className="w-full h-80 md:h-90 relative flex items-center justify-center flex-col">
           <img
-            src="imgs/_DSC7881.webp"
+            src="imgs/_DSC5754.webp"
             alt="Galerie fotografií – Martin Piskáček"
             className="absolute w-full h-full object-cover top-0 left-0"
             fetchPriority="high"

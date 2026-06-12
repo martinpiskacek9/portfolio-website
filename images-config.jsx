@@ -1,31 +1,32 @@
-import imgAutomotive from "./src/imgs/automotive.webp";
-import imgHorses from "./src/imgs/horses.webp";
-import imgLandscapes from "./src/imgs/landscapes.webp";
+import imgPortrait from "./src/imgs/portrait.webp";
 import imgEvent from "./src/imgs/event.webp";
+import imgWedding from "./src/imgs/wedding.webp";
+import imgChata from "./src/imgs/chata.webp";
 
 export const heroImages = [
     {
-        id: 1,
-        heading: "Lidé a koně",
-        image: imgHorses,
-        link: "/galerie/kone"
+         id: 1,
+        heading: "Eventy & Akce",
+        image: imgEvent,
+        link: "/galerie/eventy"
     },
     {
         id: 2,
-        heading: "Akce",
-        image: imgEvent,
-        link: "/galerie/akce"
+        heading: "Chaty & Ubytování",
+        image: imgChata,
+        link: "/galerie/chaty"
     },
     {
-        id: 3,
-        heading: "Krajina",
-        image: imgLandscapes,
-        link: "/galerie/krajina"
+         id: 3,
+        heading: "Portréty & Rodiny",
+        image: imgPortrait,
+        link: "/galerie/portrety"
     },
     {
         id: 4,
-        heading: "Automotive",
-        image: imgAutomotive,
-        link: "/galerie/automotive"
+        heading: "Svatby",
+        image: imgWedding,
+        link: "/galerie/svatby"
     }
+   
 ]

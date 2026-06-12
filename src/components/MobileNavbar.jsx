@@ -55,9 +55,15 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
           </li>
 
           <li>
-            <button className="uppercase" onClick={() => handleSectionClick("about")}>
+            <NavLink to="/o-mne" className="uppercase" onClick={() => handleSectionClick("about")}>
               o mně
-            </button>
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/cenik" className="uppercase" onClick={() => handleSectionClick("about")}>
+              ceník
+            </NavLink>
           </li>
 
           <li>
@@ -93,23 +99,23 @@ const MobileNavbar = ({ isOpen, close, scrollToSection }) => {
           </li>
 
           <li>
-            <NavLink to="/galerie/kone" onClick={handleNavClick}>
-              lidé a koně
+            <NavLink to="/galerie/eventy" onClick={handleNavClick}>
+              eventy & akce
             </NavLink>
           </li>
           <li>
-            <NavLink to="/galerie/akce" onClick={handleNavClick}>
-              akce
+            <NavLink to="/galerie/chaty" onClick={handleNavClick}>
+              chaty & ubytování
             </NavLink>
           </li>
           <li>
-            <NavLink to="/galerie/krajina" onClick={handleNavClick}>
-              krajina
+            <NavLink to="/galerie/portrety" onClick={handleNavClick}>
+              portréty&nbsp;&&nbsp;rodiny
             </NavLink>
           </li>
           <li>
-            <NavLink to="/galerie/automotive" onClick={handleNavClick}>
-              automotive
+            <NavLink to="/galerie/svatby" onClick={handleNavClick}>
+              svatby
             </NavLink>
           </li>
         </ul>

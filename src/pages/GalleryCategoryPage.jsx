@@ -6,10 +6,28 @@ import Lightbox from "../components/Lightbox";
 import { heroImages } from "../../images-config";
 
 const CATEGORY_META = {
-  kone: { heading: heroImages[0].heading, heroImg: heroImages[0].image },
-  krajina: { heading: heroImages[2].heading, heroImg: heroImages[2].image },
-  automotive: { heading: heroImages[3].heading, heroImg: heroImages[3].image },
-  akce: { heading: heroImages[1].heading, heroImg: heroImages[1].image },
+  eventy: {
+    heading: heroImages[0].heading,
+    heroImg: heroImages[0].image,
+    objectPosition: "50% 40%",
+  },
+  chaty: {
+    heading: heroImages[1].heading,
+    heroImg: heroImages[1].image,
+    objectPosition: "50% 40%",
+  },
+  portrety: {
+    heading: heroImages[2].heading,
+    heroImg: heroImages[2].image,
+    objectPosition: "50% 40%",
+  },
+  svatby: {
+    heading: heroImages[3].heading,
+    heroImg: heroImages[3].image,
+    objectPosition: "50% 10%",
+  },
+  
+  
 };
 
 const modules = import.meta.glob(
@@ -84,7 +102,8 @@ const GalleryCategoryPage = () => {
           <img
             src={meta.heroImg}
             alt={`${meta.heading} – hero image`}
-            className="absolute w-full h-full object-cover object-[50%_40%]"
+            className="absolute w-full h-full object-cover"
+            style={{ objectPosition: meta.objectPosition }}
             fetchPriority="high"
           />
           <div className="absolute w-full h-full bg-linear-to-b from-black/60 via-black/40 to-black/60" />

@@ -51,12 +51,6 @@ const Navbar = () => {
         {/* DESKTOP MENU */}
         <ul className="hidden lg:flex items-start justify-end gap-10 font-bold text-sm h-10">
 
-          <li className="h-full">
-            <NavLink to="/" className="h-full flex items-center" onClick={closeAll}>
-              úvod
-            </NavLink>
-          </li>
-
           {/* GALLERY */}
           <li
             className="relative h-full"
@@ -76,43 +70,53 @@ const Navbar = () => {
                 ${isGalleryOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"}`}
             >
               <li>
-                <NavLink to="/galerie/kone" onClick={closeAll}>
-                  lidé a koně
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/galerie/akce" onClick={closeAll}>
-                  akce
+                <NavLink to="/galerie/eventy" onClick={closeAll}>
+                  eventy & akce
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/galerie/krajina"
+                  to="/galerie/chaty"
                   className="whitespace-nowrap"
                   onClick={closeAll}
                 >
-                  krajina
+                  chaty & ubytování
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/galerie/portrety" onClick={closeAll}>
+                  portréty&nbsp;&&nbsp;rodiny
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/galerie/automotive"
+                  to="/galerie/svatby"
                   className="whitespace-nowrap"
                   onClick={closeAll}
                 >
-                  automotive
+                  svatby
                 </NavLink>
               </li>
+              
             </ul>
           </li>
 
           <li className="h-full">
-            <button
+            <NavLink
               className="uppercase h-full flex items-center"
-              onClick={() => scrollToSection("about")}
+              to="/o-mne"
             >
               o mně
-            </button>
+            </NavLink>
+          </li>
+
+          <li className="h-full">
+            <NavLink
+              className="uppercase h-full flex items-center"
+              to="/cenik"
+            >
+              ceník
+            </NavLink>
           </li>
 
           <li className="h-full">
