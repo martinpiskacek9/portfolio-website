@@ -39,7 +39,7 @@ const Hero = () => {
       </section>
 
       <div className="h-full w-full absolute px-11 top-0 flex">
-        <div className="flex md:px-11 w-full lg:items-start justify-end mb-50 lg:mb-40 items-center flex-col">
+        <div className="flex md:px-11 w-full lg:items-start justify-end mb-36 lg:mb-40 items-center flex-col">
           <h1 className="text-4xl sm:text-5xl text-center font-montserrat font-black mb-2 lg:text-6xl">
             MARTIN PISKÁČEK
           </h1>
@@ -48,7 +48,7 @@ const Hero = () => {
             Fotograf
           </h5>
 
-          <p className="my-12 text-center font-raleway text-md md:text-lg tracking-widest">
+          <p className="my-8 md:my-12 text-center font-raleway text-md md:text-lg tracking-widest">
             AKCE • PORTRÉTY • SVATBY •&nbsp;CHATY&nbsp;&&nbsp;UBYTOVÁNÍ
           </p>
 
@@ -58,7 +58,7 @@ const Hero = () => {
               .getElementById("contact")
               ?.scrollIntoView({ behavior: "smooth" });
           }}
-          className="border-2 lg:px-16 px-10 py-6 btn">
+          className="border-2 lg:px-14 lg:py-6 px-6 py-4 btn">
             DOMLUVIT FOCENÍ
           </button>
         </div>

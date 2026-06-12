@@ -19,7 +19,7 @@ const HeroSlider = ({
 
       <div className="flex flex-col items-center">
         <a
-          className="font-raleway font-normal text-xl uppercase motion-preset-fade motion-delay-300 motion-duration-1500 motion-preset-slide-right tracking-widest"
+          className="font-raleway font-normal text-md md:text-xl uppercase motion-preset-fade motion-delay-300 motion-duration-1500 motion-preset-slide-right tracking-widest"
           href={link}
         >
           {heading}
