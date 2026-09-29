@@ -7,14 +7,12 @@ import GalleryCategoryPage from "./pages/GalleryCategoryPage";
 import ErrorPage from "./pages/ErrorPage";
 import About from "./pages/About";
 import Cenik from "./pages/Cenik";
-import { Analytics } from "@vercel/analytics/next"
 
 import { Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
 const App = () => {
   return (
-    <>
     <HelmetProvider>
       <header>
         <Navbar />
@@ -34,9 +32,6 @@ const App = () => {
 
       <Footer />
     </HelmetProvider>
-    <Analytics />
-
-    </>
   );
 };
 
