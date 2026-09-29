@@ -14,6 +14,7 @@ import { HelmetProvider } from "react-helmet-async";
 
 const App = () => {
   return (
+    <>
     <HelmetProvider>
       <header>
         <Navbar />
@@ -32,8 +33,10 @@ const App = () => {
       </main>
 
       <Footer />
-    <Analytics />
     </HelmetProvider>
+    <Analytics />
+
+    </>
   );
 };
 
