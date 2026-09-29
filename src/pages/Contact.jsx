@@ -61,14 +61,6 @@ const Contact = () => {
         >
           martin.piskacek9@gmail.com
         </a>
-        {" "}či{" "}
-        <a
-          href="tel:+420728230914"
-          className="underline hover:text-white transition-colors"
-        >
-          +420&nbsp;728&nbsp;230&nbsp;914
-        </a>
-        .
       </p>
 
       <form
